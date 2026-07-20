@@ -247,47 +247,60 @@ model works — the audit sections stand on their own if it does not.
 
 ## 10. Where to submit
 
-Deadlines below are approximate cycle positions — **verify current CFPs**, as dates shift year to
-year. Ordered by fit.
+Dates below were **verified via web search on 2026-07-18** (sources at the end of this section).
+Re-check before relying on them — workshop pages drift. The key context: it is **mid-July 2026**, so
+most main-conference 2026 cycles have already closed, and the live options are two ECCV-2026
+workshops and AAAI-27, with the strong archival targets falling in the *next* cycle.
 
-### Tier A — main venues (scope 2–3, highest bar/reward)
+### Open right now (this cycle) — decide within days
 
-- **NeurIPS Datasets & Benchmarks track.** Best structural fit for an evaluation-methodology paper:
-  it rewards rigorous benchmark critique, chance-corrected metrics, judge-validity audits, and
-  reproducibility — exactly our strengths. Scope 2 is competitive here; scope 3 strengthens it.
-- **TMLR (Transactions on Machine Learning Research).** No deadline, rolling review, values
-  correctness and thoroughness over novelty-hype. Ideal if we want the audit out without racing a
-  conference clock, and it accepts "solid, well-scoped" evaluation contributions.
-- **CVPR / ICCV / ECCV main track.** Reachable only at scope 3 (a model + benchmark). As a pure audit
-  it would likely be viewed as incremental for the main track; with the reason-first model and the
-  grounding extension it becomes a full contribution.
+| Venue | Deadline (2026) | Fit | Notes |
+|---|---|---|---|
+| **BEAM 2 @ ECCV 2026** — Benchmarking Evidence-Aligned Multimodal Reasoning | **Jul 30** | ★ best thematic match | Evidence-aligned, verifiable multimodal reasoning *is* our audit's premise. Scope 1–2. Different venue from the original → no conflict. |
+| **AAAI-27 main track** | abstracts **Jul 21**, full papers **Jul 28** | main-conference, archival | 9 pages, Montréal Feb 2027. Tight, but the audit (scope 1–2) is largely written. Receptive to typed error taxonomies + reliability audits. |
+| **X-Reason @ ECCV 2026** (the original venue) | **Jul 31** | good, but **conflict risk** | This is where the *original* paper is under review. Submitting the extended version to the same workshop this cycle risks dual-submission overlap — **avoid** unless it is an explicit "extended/nectar" track. |
 
-### Tier B — evaluation / benchmark-leaning venues
+Both BEAM 2 and AAAI-27 are ~1–2 weeks out and feasible because Directions 1/2/5-Stage-0 are done and
+the paper already carries the new sections. **eXCV** (Jul 11) and **EMR** (Jul 20) are already closed.
 
-- **COLM (Conference on Language Modeling).** Friendly to evaluation and analysis of (V)LM reasoning,
-  judge reliability, and calibration. Good scope-2 home if framed around VLM evaluation methodology.
-- **AAAI / an *AAAI Evaluation* or *Trustworthy AI* track.** Receptive to typed error taxonomies and
-  reliability audits.
+### Closed for 2026 — target these next cycle
 
-### Tier C — workshops (fast, lower bar, momentum-preserving)
+- **NeurIPS 2026 Evaluations & Datasets track** (full paper was **May 6, 2026**). The D&B track was
+  **renamed and re-scoped to explicitly include evaluation methodology** — the *single best structural
+  fit* for this work. Aim for **NeurIPS 2027 ED track (~May 2027)**.
+- **COLM 2026** (was Mar 31, 2026). → **COLM 2027 (~Mar 2027)**, friendly to (V)LM evaluation/judge
+  reliability.
+- **CVPR 2026 / ECCV 2026 main** — past. **ICCV 2026 does not exist** (ICCV is odd-year).
 
-- **BEAM 2 @ ECCV 2026 — Benchmarking Evidence-Aligned Multimodal Reasoning.** The single closest
-  thematic match: evidence-aligned, verifiable multimodal reasoning is our audit's whole premise.
-  Strong scope-1/2 target.
-- **X-Reason @ ECCV 2026 (the original venue).** A natural home for the extended/camera-ready-plus
-  version, especially the grounding (D4) and interactable-world framing.
-- **eXCV @ ECCV 2026 / XAI4CV @ CVPR 2026.** Explainability-for-vision: the semantic explanation
-  scoring, faithfulness-vs-plausibility angle, and reason-first probe fit well.
-- **ERA @ CVPR 2026 / EMR @ ECCV 2026 (embodied reasoning).** Fit if we lean the "when-not-to-act"
-  safety framing toward downstream action; weaker if we stay purely static.
+### Future cycles — non-rushed, higher-reward
+
+- **TMLR** — rolling, **no deadline**. Values correctness and thoroughness over novelty. The ideal
+  home for the audit (scope 2) if we don't want to race a clock; can submit the day it's ready.
+- **CVPR 2027** — abstracts **Nov 15, 2026**, conference Jun 2027. The main-conference target for
+  **scope 3** (audit + reason-first model + grounding); as a pure audit it risks reading as
+  incremental for the main track.
+- **NeurIPS 2027 ED track (~May 2027)** — see above; the prime archival target for scope 2–3.
 
 ### Recommendation
 
-Two-track it. **Submit the audit (scope 2) to NeurIPS D&B or TMLR** for the archival, citable
-version, and in parallel **put the extended work through BEAM 2 / X-Reason** for fast community
-feedback and visibility. If D5 Stage 1 lands a model that beats the Stage-0 ceiling, **upgrade the
-target to a CVPR/ICCV main-track submission** (scope 3). Keep everything reproducible-from-repo so the
-same artifacts serve all three.
+- **If we want to move this cycle:** submit the audit (scope 1–2) to **BEAM 2 (Jul 30)** — closest fit,
+  different venue from the original, ~10 days out and largely written. Optionally also push the same
+  core to **AAAI-27 (Jul 28)** for a main-conference shot, if the writing can be finalized in time.
+- **If we can wait for a stronger archival venue:** target **TMLR** (submit when ready) or **NeurIPS
+  2027 ED track**, which was literally re-scoped for evaluation-methodology papers like this one.
+- **If D5 Stage 1 lands a model** that beats the Stage-0 ceiling (0.374 text-only / 0.350 Claude+mapper),
+  **upgrade to CVPR 2027 main track (scope 3)**.
+
+Keep everything reproducible-from-repo so the same artifacts serve all three routes.
+
+**Sources (checked 2026-07-18):**
+[NeurIPS 2026 Evaluations & Datasets CFP](https://neurips.cc/Conferences/2026/CallForEvaluationsDatasets),
+[ECCV 2026 workshop deadlines](https://aiworkshoptracker.com/conference/eccv/),
+[X-Reason workshop](https://xreason-workshop.github.io/),
+[eXCV workshop](https://excv-workshop.github.io/),
+[AAAI-27 main track call](https://aaai.org/conference/aaai/aaai-27/main-technical-track-call/),
+[CVPR 2027 dates](https://mlciv.com/ai-deadlines/conference/?id=cvpr27),
+[COLM 2026 dates](https://colmweb.org/dates.html).
 
 ---
 
