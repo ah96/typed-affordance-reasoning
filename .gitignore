@@ -1,0 +1,72 @@
+# ============================================================================
+# typed-affordance-reasoning — what git does NOT carry.
+#
+# Big data and model weights are transferred to the lab PC by USB (or
+# regenerated there); git carries only code + small committed artifacts
+# (raw predictions, the 200 Exp-B bundle images, configs, the paper).
+# See the repo README and experiments/*/HOW_TO_RUN_*.md for the transfer list.
+# ============================================================================
+
+# ---- Large datasets (USB to the lab PC; never in git) ----------------------
+datasets/
+ooal_models_amar/
+sam_vit_h_4b8939.pth
+
+# ---- Reference PDFs (the .md planning notes ARE kept; drop the binaries) ----
+related_work/Initial Papers/
+related_work/Learning Affordances Papers/
+related_work/XAI Papers/
+related_work/*.docx
+
+# ---- Python ----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ---- Per-call caches (resumable run-state; machine-local, regenerable) -----
+**/cache_a_vision/
+**/cache_a_local/
+**/cache_b/
+**/cache_judge/
+**/cache_replay/
+
+# ---- Regenerable bundles & auto-downloaded weights -------------------------
+# NOTE: experiment_a_bundle/ IS committed (257M, no file >50MB) so the lab PC
+# gets it via `git pull` — no USB, no HF re-download. Only its transient out/
+# working dir is ignored. To slim the repo later, drop images_full/ (235M,
+# regenerable via experiment_a/prep_bundle.sh) and keep instance_seg/+labels.
+experiments/experiment_a_bundle/out/
+experiments/experiment_b_bundle/out/
+experiments/experiment_b/checkpoints/
+experiments/experiment_b/legacy/
+*.pt
+*.pth
+
+# ---- Lab-PC generated outputs (D3 / D4) ------------------------------------
+experiments/local_vlms/results/
+experiments/local_vlms/vllm_*.log
+experiments/ooal_grounding/ooal_upstream/
+experiments/ooal_grounding/heatmaps*/
+experiments/ooal_grounding/agd_seen_flat/
+experiments/ooal_grounding/regions_*.jsonl
+experiments/ooal_grounding/out_eval.json
+
+# ---- OS / editor junk ------------------------------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# ---- LaTeX build artifacts (keep the .tex/.bib/figures) --------------------
+overleaf/*.aux
+overleaf/*.log
+overleaf/*.out
+overleaf/*.bbl
+overleaf/*.blg
+overleaf/*.synctex.gz
+overleaf/*.fdb_latexmk
+overleaf/*.fls

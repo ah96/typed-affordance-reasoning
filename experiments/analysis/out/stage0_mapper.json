@@ -1,0 +1,43 @@
+{
+ "n_train": 21119,
+ "n_test_gt": 8535,
+ "mapper_acc_gt_text": 0.37398945518453425,
+ "zeroshot_acc_gt_text": 0.21511423550087874,
+ "models": {
+  "claude_sonnet_5": {
+   "type_before": 0.2555997599596296,
+   "type_after": 0.35019687726702087,
+   "type_ceiling_given_detection": 0.7855730996316913,
+   "n_gt_exc": 579,
+   "n_remapped": 442
+  },
+  "gemini_3_5_flash": {
+   "type_before": 0.17951212249332843,
+   "type_after": 0.18275856134245955,
+   "type_ceiling_given_detection": 0.5517665730794985,
+   "n_gt_exc": 579,
+   "n_remapped": 319
+  },
+  "gpt_5_5": {
+   "type_before": 0.10961963732861565,
+   "type_after": 0.10100009352222225,
+   "type_ceiling_given_detection": 0.25826073346101713,
+   "n_gt_exc": 579,
+   "n_remapped": 135
+  },
+  "llama_4_maverick": {
+   "type_before": 0.12783645756007017,
+   "type_after": 0.10932797463989075,
+   "type_ceiling_given_detection": 0.3896571566256923,
+   "n_gt_exc": 579,
+   "n_remapped": 215
+  },
+  "o4_mini": {
+   "type_before": 0.22932234707005916,
+   "type_after": 0.23678668360458027,
+   "type_ceiling_given_detection": 0.7177096797448401,
+   "n_gt_exc": 579,
+   "n_remapped": 406
+  }
+ }
+}

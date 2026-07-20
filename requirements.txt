@@ -1,0 +1,9 @@
+# Full dependency set for both experiments.
+# If you only need one, install its requirements directly instead:
+#   pip install -r experiments/experiment_a/requirements.txt   # Experiment A (CPU, cloud VLMs)
+#   pip install -r experiments/experiment_b/requirements.txt   # Experiment B (GPU, SAM pipeline)
+#
+# Note: install torch/torchvision matching your CUDA FIRST (see experiment_b/requirements.txt).
+
+-r experiments/experiment_a/requirements.txt
+-r experiments/experiment_b/requirements.txt

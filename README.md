@@ -16,6 +16,11 @@ and explicit chain-of-thought helps but is not necessary.
 > This README documents the full framework, procedure, metrics (in more detail than the paper), and
 > **all** results. The paper is the condensed version; this is the reference.
 
+> **This repo extends the submission.** Beyond the two submitted experiments (Secs. 1–5), it adds an
+> audit of the evaluation itself and two GPU extensions (Sec. 6): chance-corrected agreement, an
+> ensemble-vs-ground-truth test, semantic explanation scoring, a reason-first mapper probe, and
+> packaged open-VLM / OOAL-grounding runs. Lab-PC setup: [`LAB_PC_SETUP.md`](LAB_PC_SETUP.md).
+
 ---
 
 ## 1. Framework
@@ -256,44 +261,79 @@ Full run guides (to regenerate from scratch, with API keys / GPU):
 
 ---
 
-## 6. Repository Structure
+## 6. Follow-up: audit and extensions
+
+Work beyond the submitted paper. The reanalysis (6.1) reproduces from committed data with **no API
+or GPU**; the extensions (6.2) are packaged for the lab PC — see [`LAB_PC_SETUP.md`](LAB_PC_SETUP.md).
+
+### 6.1 Reanalysis of the committed predictions — `experiments/analysis/` (laptop)
+
+| Script | What it adds |
+|---|---|
+| `analysis_agreement.py` | Chance-corrected agreement (Fleiss κ 0.14 area / 0.25 concept), tie-free typicality, per-model label priors — raw agreement flattered the consensus; much of the dissent is prior clash. |
+| `analysis_confusion.py` | 7×7 confusions, bootstrap 95% CIs, exception-axis errors — per-model failure signatures; cross-axis errors dominate within-axis. |
+| `analysis_ensemble.py` | Majority vote vs. ground truth — the ensemble beats no single model and loses on exceptions; models agree with each other 2.8× more than with the labels. |
+| `analysis_explanations.py` | Embedding / NLI / BERTScore on the 579 exceptions — the "quality gap" is mostly a detection gap; wrong-type detections still carry the right reason. |
+| `stage0_mapper.py` | Reason-first probe (Direction 5, Stage 0): re-mapping models' own explanations to types lifts Claude 0.256→0.350; text-only ceiling 0.374 → typing needs reason **and** pixels. |
+| `judge_explanations.py` | LLM judge + validity audit (free-tier Gemini, resumable) — run with `GEMINI_API_KEY` set. |
+
+Findings write-up: [`experiments/analysis/README.md`](experiments/analysis/README.md). Numbers land in
+`experiments/analysis/out/*.json`.
+
+### 6.2 Lab-PC extensions (GPU) — `experiments/local_vlms/`, `experiments/ooal_grounding/`
+
+- **D3 open-weight VLMs** — same-weights reasoning ablation (Qwen3-VL Instruct vs. Thinking) and a
+  widened agreement pool that replays the *exact* committed Exp B regions to new models
+  (`run_d3_reasoning_ablation.sh`, `run_d3_agreement_replay.sh`).
+- **D4 OOAL grounding** — OOAL saliency re-ranking as a third selection strategy, plus GT-grounded
+  selection evaluation on AGD20K (`run_d4_grounding.sh`).
+
+Setup, USB-transfer list, and run order: [`LAB_PC_SETUP.md`](LAB_PC_SETUP.md).
+
+---
+
+## 7. Repository Structure
 
 ```
-aff_reason_llm/
+typed-affordance-reasoning/
+├── LAB_PC_SETUP.md                  # GPU-side setup: USB transfers + run order
 ├── experiments/
 │   ├── experiment_a/                # Exp A — GT-grounded typed eval
-│   │   ├── README.md                   # run guide + headline numbers
 │   │   ├── eval_experiment_a_vision.py # runner (full image + GT crop → 7-way)
-│   │   ├── build_instance_masks.py     # one-time ADE20K data prep (HF mirror)
+│   │   ├── build_instance_masks.py     # ADE20K data prep (HF mirror); prep_bundle.sh wraps it
 │   │   ├── export_raw_results.py       # cache → committed raw_*.jsonl
-│   │   ├── fill_missing.py             # resumable gap-filler for missing calls
-│   │   ├── ade_parsing.py, metrics_relationship.py, metrics_caption.py
-│   │   ├── configs/llms.json
+│   │   ├── ade_parsing.py, metrics_relationship.py, metrics_caption.py, configs/llms.json
 │   │   └── results/                    # committed raw predictions + scorer + summaries
 │   │
 │   ├── experiment_b/                # Exp B — GT-free agreement pipeline
-│   │   ├── HOW_TO_RUN_EXP_B.md          # full run guide (setup, smoke tests, cost)
 │   │   ├── experiment_b_run_v2.py       # runner (sam2_area / sam3_concept / mock)
 │   │   ├── experiment_b_agreement.py    # N-way / pairwise agreement + consensus scorer
-│   │   ├── make_example.py, snapshot_results.py, download_sam.py
 │   │   ├── vision_llm_clients.py        # hardened REST clients (retry, Flex tier)
 │   │   ├── configs/llms.json, action_concepts.json
 │   │   └── results/                     # committed raw predictions + agreement summaries
 │   │
-│   └── experiment_b_bundle/images/  # 200 ADE20K val scenes for Exp B (committed)
+│   ├── experiment_a_bundle/         # Exp A images/seg/GT labels (committed, 257M)
+│   ├── experiment_b_bundle/images/  # 200 ADE20K val scenes for Exp B (committed)
+│   │
+│   ├── analysis/                    # Sec. 6.1 — reanalysis (no API/GPU); out/*.json
+│   ├── local_vlms/                 # Sec. 6.2 D3 — open-VLM pool, region replay, drivers
+│   └── ooal_grounding/             # Sec. 6.2 D4 — OOAL adapter, re-ranking, GT eval
 │
+├── overleaf/                        # paper source (main.tex, main.bib, figures)
+├── related_work/                    # planning notes (*.md; reference PDFs git-ignored)
 ├── README.md · requirements.txt · LICENSE
 ```
 
-The **raw per-model predictions are committed** so results reproduce from the repo alone. Large or
-regenerable artifacts are **git-ignored**: `overleaf/` (the paper is on Overleaf), `datasets/`,
-`experiments/experiment_a_bundle/` (images/seg/GT — regenerable via `build_instance_masks.py`), the
-`cache_a_vision/` / `cache_b/` caches, `experiments/experiment_b/checkpoints/` (SAM weights), and
-`experiments/experiment_b/legacy/`.
+The **raw per-model predictions are committed** so results reproduce from the repo alone, and the
+Exp A / Exp B image bundles and the paper source are now tracked too. **Git-ignored** (transferred to
+the lab PC by USB, or regenerated there): `datasets/` (ADE20K, AGD20K), `ooal_models_amar/` (OOAL
+checkpoints), `sam_vit_h_4b8939.pth`, the `related_work/` reference PDFs, all per-call caches, SAM
+weights (`experiment_b/checkpoints/`), and the lab-PC run outputs (`local_vlms/results/`,
+`ooal_grounding/heatmaps*/`). See [`.gitignore`](.gitignore) and [`LAB_PC_SETUP.md`](LAB_PC_SETUP.md).
 
 ---
 
-## 7. Citation
+## 8. Citation
 
 ```bibtex
 @inproceedings{affbench2026,

@@ -1,0 +1,19 @@
+# Experiment B — dependencies (runs on a GPU lab PC)
+#
+# The VLM clients (vision_llm_clients.py) call the cloud REST APIs directly via `requests`
+# — NO vendor SDKs (openai / anthropic / google) are needed. Only SAM segmentation needs
+# the GPU stack. The agreement scorer is pure stdlib.
+
+# --- core (always needed) ---
+numpy>=1.23
+pillow>=9.5
+tqdm>=4.65
+requests>=2.31
+
+# --- SAM segmentation (GPU) ---
+# Install torch/torchvision matching your CUDA FIRST, e.g.:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+torch>=2.2
+torchvision>=0.17
+ultralytics>=8.3          # SAM 2 (segment-everything) + SAM 3 (concept) providers, with auto-download
+huggingface_hub>=0.24     # gated SAM 3 checkpoint (facebook/sam3) — run `hf auth login` first

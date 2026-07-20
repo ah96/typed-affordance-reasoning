@@ -1,0 +1,206 @@
+[
+ {
+  "mode": "sam2_area",
+  "K": 3,
+  "n_items": 3342,
+  "fleiss_kappa_7": 0.1378724723076466,
+  "fleiss_kappa_3": 0.11156784019334036,
+  "kripp_alpha_7": 0.13793696419332147,
+  "kripp_alpha_3": 0.11163429981032713,
+  "pairwise_cohen_kappa_7": {
+   "gpt_5_5|claude_sonnet_5": 0.3254999961443134,
+   "gpt_5_5|gemini_3_5_flash": 0.14924221081171143,
+   "gpt_5_5|llama_4_maverick": 0.1449164997014128,
+   "claude_sonnet_5|gemini_3_5_flash": 0.13898540828758074,
+   "claude_sonnet_5|llama_4_maverick": 0.09945383096673666,
+   "gemini_3_5_flash|llama_4_maverick": 0.14366973714981646
+  },
+  "pairwise_cohen_kappa_3": {
+   "gpt_5_5|claude_sonnet_5": 0.2831292259302059,
+   "gpt_5_5|gemini_3_5_flash": 0.0954248818161608,
+   "gpt_5_5|llama_4_maverick": 0.14431041237104075,
+   "claude_sonnet_5|gemini_3_5_flash": 0.040333816774830715,
+   "claude_sonnet_5|llama_4_maverick": 0.07891439026374597,
+   "gemini_3_5_flash|llama_4_maverick": 0.20969301573181995
+  },
+  "mean_pairwise_cohen_kappa_7": 0.16696128051026193,
+  "mean_pairwise_cohen_kappa_3": 0.14196762381463401,
+  "typicality": {
+   "gpt_5_5": 0.3949730700179517,
+   "claude_sonnet_5": 0.39327747855575407,
+   "gemini_3_5_flash": 0.2850588469978086,
+   "llama_4_maverick": 0.3673449032515473
+  },
+  "conditional_type_agreement": {
+   "claude_sonnet_5|gemini_3_5_flash": {
+    "n_both_exception": 963,
+    "same_type_rate": 0.4652128764278297
+   },
+   "claude_sonnet_5|llama_4_maverick": {
+    "n_both_exception": 1174,
+    "same_type_rate": 0.6856899488926746
+   },
+   "gemini_3_5_flash|llama_4_maverick": {
+    "n_both_exception": 760,
+    "same_type_rate": 0.20394736842105263
+   },
+   "gpt_5_5|claude_sonnet_5": {
+    "n_both_exception": 1976,
+    "same_type_rate": 0.7596153846153846
+   },
+   "gpt_5_5|gemini_3_5_flash": {
+    "n_both_exception": 997,
+    "same_type_rate": 0.40220661985957873
+   },
+   "gpt_5_5|llama_4_maverick": {
+    "n_both_exception": 1242,
+    "same_type_rate": 0.7351046698872786
+   }
+  },
+  "conditional_type_agreement_overall": {
+   "n": 7112,
+   "rate": 0.593785151856018
+  },
+  "pairwise_agreement_3way": 0.5042389786554957,
+  "pairwise_agreement_7way": 0.360163574705765,
+  "label_distribution": {
+   "gpt_5_5": {
+    "Positive": 0.175344105326152,
+    "FirmlyNegative": 0.09186116098144824,
+    "ObjectNonFunctional": 0.5589467384799521,
+    "PhysicalObstacle": 0.03889886295631358,
+    "SociallyAwkward": 0.0038898862956313583,
+    "SociallyForbidden": 0.026331538001196888,
+    "Dangerous": 0.1047277079593058
+   },
+   "claude_sonnet_5": {
+    "Positive": 0.0786953919808498,
+    "FirmlyNegative": 0.19389587073608616,
+    "ObjectNonFunctional": 0.5002992220227409,
+    "PhysicalObstacle": 0.03949730700179533,
+    "SociallyAwkward": 0.007779772591262717,
+    "SociallyForbidden": 0.06463195691202872,
+    "Dangerous": 0.11520047875523638
+   },
+   "gemini_3_5_flash": {
+    "Positive": 0.12178336325553561,
+    "FirmlyNegative": 0.4706762417713944,
+    "ObjectNonFunctional": 0.05475763016157989,
+    "PhysicalObstacle": 0.1843207660083782,
+    "SociallyAwkward": 0.03201675643327349,
+    "SociallyForbidden": 0.04398563734290844,
+    "Dangerous": 0.09245960502692999
+   },
+   "llama_4_maverick": {
+    "Positive": 0.12687013764213045,
+    "FirmlyNegative": 0.39916217833632556,
+    "ObjectNonFunctional": 0.4111310592459605,
+    "PhysicalObstacle": 0.021244763614602036,
+    "SociallyAwkward": 0.0008976660682226212,
+    "SociallyForbidden": 0.039796529024536204,
+    "Dangerous": 0.0008976660682226212
+   }
+  }
+ },
+ {
+  "mode": "sam3_concept",
+  "K": 3,
+  "n_items": 1215,
+  "fleiss_kappa_7": 0.2463724004825778,
+  "fleiss_kappa_3": 0.3402798172142805,
+  "kripp_alpha_7": 0.2465274678898861,
+  "kripp_alpha_3": 0.3404155621078575,
+  "pairwise_cohen_kappa_7": {
+   "gpt_5_5|claude_sonnet_5": 0.3104860850845005,
+   "gpt_5_5|gemini_3_5_flash": 0.32656905514381,
+   "gpt_5_5|llama_4_maverick": 0.21878674049320676,
+   "claude_sonnet_5|gemini_3_5_flash": 0.3152291296237714,
+   "claude_sonnet_5|llama_4_maverick": 0.22222581348933795,
+   "gemini_3_5_flash|llama_4_maverick": 0.18213329561469732
+  },
+  "pairwise_cohen_kappa_3": {
+   "gpt_5_5|claude_sonnet_5": 0.39418367032583346,
+   "gpt_5_5|gemini_3_5_flash": 0.43251683133227153,
+   "gpt_5_5|llama_4_maverick": 0.27577773687117046,
+   "claude_sonnet_5|gemini_3_5_flash": 0.36334727375739734,
+   "claude_sonnet_5|llama_4_maverick": 0.31475923482849594,
+   "gemini_3_5_flash|llama_4_maverick": 0.3020673104539913
+  },
+  "mean_pairwise_cohen_kappa_7": 0.26257168657488733,
+  "mean_pairwise_cohen_kappa_3": 0.3471086762615267,
+  "typicality": {
+   "gpt_5_5": 0.5056241426611807,
+   "claude_sonnet_5": 0.4735253772290812,
+   "gemini_3_5_flash": 0.46035665294924566,
+   "llama_4_maverick": 0.40685871056241346
+  },
+  "conditional_type_agreement": {
+   "gpt_5_5|llama_4_maverick": {
+    "n_both_exception": 291,
+    "same_type_rate": 0.6048109965635738
+   },
+   "gpt_5_5|claude_sonnet_5": {
+    "n_both_exception": 326,
+    "same_type_rate": 0.5429447852760736
+   },
+   "gpt_5_5|gemini_3_5_flash": {
+    "n_both_exception": 258,
+    "same_type_rate": 0.38372093023255816
+   },
+   "claude_sonnet_5|gemini_3_5_flash": {
+    "n_both_exception": 289,
+    "same_type_rate": 0.5155709342560554
+   },
+   "claude_sonnet_5|llama_4_maverick": {
+    "n_both_exception": 354,
+    "same_type_rate": 0.4350282485875706
+   },
+   "gemini_3_5_flash|llama_4_maverick": {
+    "n_both_exception": 280,
+    "same_type_rate": 0.10714285714285714
+   }
+  },
+  "conditional_type_agreement_overall": {
+   "n": 1798,
+   "rate": 0.43659621802002224
+  },
+  "pairwise_agreement_3way": 0.6005486968449931,
+  "pairwise_agreement_7way": 0.4615912208504801,
+  "label_distribution": {
+   "gpt_5_5": {
+    "Positive": 0.5835390946502058,
+    "FirmlyNegative": 0.05925925925925926,
+    "ObjectNonFunctional": 0.21975308641975308,
+    "PhysicalObstacle": 0.019753086419753086,
+    "SociallyForbidden": 0.013991769547325103,
+    "Dangerous": 0.1037037037037037
+   },
+   "claude_sonnet_5": {
+    "Positive": 0.40329218106995884,
+    "FirmlyNegative": 0.14156378600823044,
+    "ObjectNonFunctional": 0.18436213991769548,
+    "PhysicalObstacle": 0.06666666666666667,
+    "SociallyAwkward": 0.005761316872427984,
+    "SociallyForbidden": 0.06255144032921811,
+    "Dangerous": 0.13580246913580246
+   },
+   "gemini_3_5_flash": {
+    "Positive": 0.49876543209876545,
+    "FirmlyNegative": 0.1588477366255144,
+    "ObjectNonFunctional": 0.01728395061728395,
+    "PhysicalObstacle": 0.16296296296296298,
+    "SociallyAwkward": 0.01728395061728395,
+    "SociallyForbidden": 0.03621399176954732,
+    "Dangerous": 0.10864197530864197
+   },
+   "llama_4_maverick": {
+    "Positive": 0.33497942386831275,
+    "FirmlyNegative": 0.1720164609053498,
+    "ObjectNonFunctional": 0.4510288065843621,
+    "PhysicalObstacle": 0.00823045267489712,
+    "SociallyForbidden": 0.030452674897119343,
+    "Dangerous": 0.0032921810699588477
+   }
+  }
+ }
+]
