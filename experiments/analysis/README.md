@@ -84,6 +84,21 @@ Majority vote of the four standard models on all 13,512 GT-labelled pairs:
   behind the paper's "agreement is a reliability signal, not correctness" caveat — and the
   ensemble rows show the gap is not benign.
 
+## 4. LLM judge + validity audit (`judge_explanations.py`)
+
+An independent judge (Gemini 3.1 Flash-Lite, **not** one of the evaluated models) rules whether each
+detected exception's explanation gives the same reason as the human references, over 1,517 rows.
+
+- **Corroborates the semantic ranking**: same-reason rate Claude 0.507 > GPT-5.5 0.385 >
+  Gemini 0.329 > o4-mini 0.288 > Llama 0.200 — the same order as the embedding/NLI metrics.
+- **Sharpens reason-first**: same-rate is higher on exact-type than wrong-axis rows for most models
+  (Claude 0.685 vs 0.449), a wider gap than the embedding cosine — so wrong-type explanations carry
+  the right reason less often than surface similarity implied, but still substantially (0.19–0.45).
+- **Validity audit (the headline)**: re-judging identical input is perfectly stable (1.000), but
+  reversing reference order or a meaning-preserving surface rewrite each flip **11.3%** of verdicts
+  (stability 0.887). The judge is *reliable but not valid* — hence reported only alongside the
+  reference-based metrics, never as ground truth.
+
 ## Takeaway
 
 Experiment B's consensus measures reward typicality of priors. The two most "central" models

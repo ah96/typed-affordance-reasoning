@@ -1,4 +1,58 @@
 {
- "base": {},
- "audit": {}
+ "base": {
+  "claude_sonnet_5": {
+   "n": 442,
+   "same_reason": 0.5067873303167421,
+   "partially_related": 0.06334841628959276,
+   "different_reason": 0.4298642533936652,
+   "same_given_exact_type": 0.6851851851851852,
+   "same_given_wrong_type": 0.4491017964071856
+  },
+  "gemini_3_5_flash": {
+   "n": 319,
+   "same_reason": 0.329153605015674,
+   "partially_related": 0.13479623824451412,
+   "different_reason": 0.5360501567398119,
+   "same_given_exact_type": 0.2857142857142857,
+   "same_given_wrong_type": 0.35046728971962615
+  },
+  "gpt_5_5": {
+   "n": 135,
+   "same_reason": 0.3851851851851852,
+   "partially_related": 0.044444444444444446,
+   "different_reason": 0.5703703703703704,
+   "same_given_exact_type": 0.45,
+   "same_given_wrong_type": 0.35789473684210527
+  },
+  "llama_4_maverick": {
+   "n": 215,
+   "same_reason": 0.2,
+   "partially_related": 0.06976744186046512,
+   "different_reason": 0.7302325581395349,
+   "same_given_exact_type": 0.22,
+   "same_given_wrong_type": 0.19393939393939394
+  },
+  "o4_mini": {
+   "n": 406,
+   "same_reason": 0.2881773399014778,
+   "partially_related": 0.0665024630541872,
+   "different_reason": 0.645320197044335,
+   "same_given_exact_type": 0.4,
+   "same_given_wrong_type": 0.2585669781931464
+  }
+ },
+ "audit": {
+  "consistency": {
+   "n": 564,
+   "verdict_stability": 1.0
+  },
+  "refshuffle": {
+   "n": 564,
+   "verdict_stability": 0.8865248226950354
+  },
+  "surface": {
+   "n": 564,
+   "verdict_stability": 0.8865248226950354
+  }
+ }
 }

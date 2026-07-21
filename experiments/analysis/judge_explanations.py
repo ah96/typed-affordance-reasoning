@@ -132,11 +132,18 @@ def cache_path(job, audit):
                         f"{job['image']}_{job['action']}_{job['region_id']}.json")
 
 
-def run(jobs, audits, sleep):
-    from vision_llm_clients import make_client, LLMConfig
-    cfgs = json.load(open(os.path.join(HERE, "..", "experiment_b", "configs", "llms.json")))
-    gem = next(c for c in cfgs if c["name"] == "gemini_3_5_flash")
-    client = make_client(LLMConfig(**{k: v for k, v in gem.items() if not k.startswith("_")}))
+def run(jobs, audits, sleep, model=None):
+    # load_llms resolves "ENV:GEMINI_API_KEY" from the environment; building LLMConfig from the
+    # raw JSON here would pass the literal "ENV:..." string as the key (Google -> API_KEY_INVALID).
+    from vision_llm_clients import make_client, load_llms
+    cfgs = load_llms(os.path.join(HERE, "..", "experiment_b", "configs", "llms.json"))
+    gem = next(c for c in cfgs if c.name == "gemini_3_5_flash")
+    if not gem.api_key:
+        raise SystemExit("GEMINI_API_KEY is not set in this shell — `export GEMINI_API_KEY=...` first.")
+    if model:                       # override the judge model without touching the shared config
+        gem.model = model
+    print(f"judge model: {gem.model}")
+    client = make_client(gem)
 
     todo = [(j, a) for a in ([None] + audits) for j in (jobs if a is None else audit_subset(jobs))
             if not os.path.exists(cache_path(j, a))]
@@ -210,6 +217,9 @@ def main():
     ap.add_argument("--audit", action="append", default=[],
                     choices=["consistency", "refshuffle", "surface"])
     ap.add_argument("--sleep", type=float, default=5.0)
+    ap.add_argument("--model", default=None,
+                    help="override the judge model id (e.g. gemini-2.5-flash) if the default is "
+                         "overloaded (503) or to avoid judging with an evaluated model")
     ap.add_argument("--report", action="store_true")
     args = ap.parse_args()
 
@@ -219,7 +229,7 @@ def main():
     if args.report:
         report(jobs, ["consistency", "refshuffle", "surface"])
     else:
-        run(jobs, args.audit, args.sleep)
+        run(jobs, args.audit, args.sleep, args.model)
 
 
 if __name__ == "__main__":

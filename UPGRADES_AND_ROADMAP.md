@@ -100,12 +100,25 @@ the 579 exceptions, for both the explanation and consequence fields.
 - **Consequences converge more than reasons** (detected cosine 0.45–0.56) but entail less
   (0.08–0.22): a scene admits many valid outcomes but fewer valid reasons.
 
-### 4.3 Judge + validity audit (Direction 2b, packaged, awaits one API key)
+### 4.3 Judge + validity audit (Direction 2b, done, laptop)
 
-`experiments/analysis/judge_explanations.py` — a free-tier Gemini judge scoring reason-match, plus a
-**validity audit** that re-judges under perturbations that should not change the verdict
-(second pass, reference-shuffle, surface rewrite). This directly answers the 2026 critique that
-LLM-judges are consistent-but-not-valid. Resumable; run with `GEMINI_API_KEY` set.
+`experiments/analysis/judge_explanations.py` — an independent judge (Gemini~3.1~Flash-Lite,
+deliberately **not** one of the evaluated models, to avoid self-preference) scores reason-match over
+1,517 detected exceptions, plus a **validity audit** that re-judges a stratified subset under
+perturbations that should not change the verdict (second pass, reference-shuffle, surface rewrite).
+
+- **Corroborates the semantic ranking**: same-reason rate Claude 0.507 > GPT-5.5 0.385 >
+  Gemini 0.329 > o4-mini 0.288 > Llama 0.200 — an independent method reproduces the
+  embedding/NLI order, so the explanation-quality finding is not a one-metric artifact.
+- **Tempers "wrong label, right reason"**: same-rate is higher on exact-type than wrong-axis rows for
+  most models (Claude 0.685 vs 0.449), a wider gap than the embedding cosine — mistyped detections
+  carry the right reason less often than surface similarity implied, but still substantially (0.19–0.45).
+- **Validity audit (the headline)**: re-judging identical input is perfectly stable (**1.000**) yet
+  reversing reference order or a meaning-preserving surface rewrite each flip **11.3%** of verdicts
+  (stability 0.887) — the judge is *reliable but not valid*, the exact 2026 critique made concrete, so
+  we report it only alongside the reference-based metrics, never as ground truth.
+
+Free-tier, resumable; results in `out/judge.json`, written into the paper (`sec:judge`, `tab:judge`).
 
 ### 4.4 Reason-first probe (Direction 5, Stage 0, done, laptop)
 
@@ -161,8 +174,9 @@ lifecycle management.
 | Consensus ≠ correctness | ensemble beats no single model; model–model κ 0.214 vs model–GT κ 0.077 (2.8×) |
 | Errors cross constraint axes | wrong-axis > right-axis-wrong-type for all five models |
 | Explanation gap ≈ detection gap | detected-only cosine span 0.41–0.51 (was 0.11–0.39) |
-| Wrong code, right reason | wrong-axis explanations ≈ as aligned as exact-type ones |
+| Wrong code, right reason | wrong-axis explanations ≈ as aligned as exact-type ones (judge tempers: exact 0.685 > wrong-axis 0.449 for Claude) |
 | Mapping is the fixable bottleneck | text mapper lifts Claude Type +37%; ceiling 0.374 needs pixels |
+| Judge corroborates, but is reliable-not-valid | judge ranking matches semantic order; 11.3% of verdicts flip under meaning-preserving perturbation |
 
 **Net narrative.** The typed taxonomy exposes real divergence, but that divergence is (1) overstated
 by uncorrected agreement, (2) partly a clash of priors, (3) partly a reason→type *mapping* failure
@@ -192,9 +206,12 @@ constructive next step (reason-first typing).
 
 ## 7. Experiments still to run — and what we expect
 
+All laptop-side, zero-budget work (D1, D2a, **D2b**, D5-Stage-0) is **done**; D2b's expected outcome
+was confirmed (judge corroborates the ranking; 11.3% verdict flips = reliable-not-valid — see §4.3).
+What remains is GPU work on the lab PC and the reason-first model.
+
 | # | Experiment | Where | Hypothesis / expected outcome | Risk |
 |---|---|---|---|---|
-| D2b | Judge + validity audit | laptop (free Gemini) | Judge agrees with semantic scores on reason-match; audit shows moderate consistency that **drops under paraphrase/surface** perturbation, quantifying judge (un)reliability per exception type. | Free-tier rate limits (handled by resumable cache). |
 | D3a | Same-weights CoT ablation | lab PC | Thinking > Instruct on Detect/Type by a **modest** margin; the gap is smaller than the Claude–GPT gap → reinforces "CoT sufficient, not necessary" with identity controlled. Thinking should also shrink the **wrong-axis** error share. | vLLM/Qwen version support. |
 | D3b | Widened agreement pool | lab PC | More voters cut the 21.2% tie rate and **lower** chance-corrected κ further (open models add prior diversity) → strengthens "consensus is thin." Frontier-vs-open axis emerges. | Free/open model quality. |
 | D4-1 | OOAL checkpoint sanity | lab PC | KLD/SIM/NSS land near the OOAL paper (~1.07/0.46/1.14 Seen) → validates the adapter. **Gates** D4-2/3. | Upstream API drift (adapter fix isolated). |
@@ -233,8 +250,9 @@ typed: 0.786 (Claude).
 
 ## 9. How to frame the paper (three viable scopes)
 
-1. **Audit paper (ready now).** Directions 1+2 (+2b): "What is agreement-based, annotation-free typed
-   affordance evaluation actually worth?" Self-contained, zero-budget, methodologically current.
+1. **Audit paper (complete now).** Directions 1+2a+2b+5-Stage-0, all run: "What is agreement-based,
+   annotation-free typed affordance evaluation actually worth?" Self-contained, zero-budget,
+   methodologically current, and fully backed by results already in `main.tex`.
 2. **Audit + extensions (adds a few GPU days).** + D3 (open-model reasoning ablation, frontier-vs-open)
    and D4 (spatial grounding). Broader, still no new paid tokens.
 3. **Diagnosis → model paper (the arc).** + D5 Stage 1: the reason-first model that the audit predicts.
@@ -304,6 +322,7 @@ Keep everything reproducible-from-repo so the same artifacts serve all three rou
 
 ---
 
-*Status snapshot: Directions 1, 2a, and 5-Stage-0 complete (laptop, zero cost); 2b awaits one API
-key; 3 and 4 packaged and mock-tested for the lab PC; the paper source already carries the new
-sections. See [project memory / follow-up state] for the live checklist.*
+*Status snapshot (2026-07-21): the full laptop-side, zero-budget program — Directions 1, 2a, 2b, and
+5-Stage-0 — is complete, with all numbers written into `main.tex`. Remaining: the lab-PC GPU runs
+(D3, D4, packaged and mock-tested) and the reason-first model (D5 Stage 1, designed). The audit paper
+is submission-ready now. See [project memory / follow-up state] for the live checklist.*

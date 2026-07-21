@@ -162,7 +162,7 @@ Agreement is far higher on \emph{whether} an action is possible than on \emph{wh
 We further audit what this agreement is worth.
 Chance-corrected agreement is only slight to fair (Fleiss $\kappa$ 0.14--0.25), much of the disagreement traces to model-specific label priors rather than scene-specific dissent, and a majority vote of the four models beats no single model against ground truth, decisively losing to the best model on typed exceptions.
 Consensus therefore rewards typicality rather than correctness in this setting.
-Semantic scoring of the free-text explanations with embedding, entailment, and BERTScore measures replaces the near-zero $n$-gram picture and shows that mistyped detections still carry partially correct reasons.
+Semantic scoring of the free-text explanations with embedding, entailment, and BERTScore measures replaces the near-zero $n$-gram picture and shows that mistyped detections still carry partially correct reasons, corroborated by an LLM judge whose own validity we audit ($11\%$ of its verdicts flip under meaning-preserving perturbations).
 \end{abstract}
 
 % Submission notes: 4 or 8 pages including references
@@ -195,7 +195,7 @@ Our central finding is that these models largely agree on \emph{whether} an acti
   \item A \textbf{typed formulation of affordance evaluation} built on ADE-Affordance's 7-way relationship categories: models must name the \emph{type} of constraint (physical, functional, social, or safety) rather than emit a binary can/cannot label, and justify every exception with a grounded explanation and consequence.
   \item An \textbf{annotation-free evaluation protocol} pairing SAM~2 instance discovery with structured, taxonomy-constrained VLM queries --- plus a SAM~3 concept-targeted variant that surfaces affordance-relevant objects --- over existing scenes, with no category-specific detectors and no new annotation.
   \item An \textbf{empirical study} of four frontier VLMs plus a reasoning model, using pairwise and 4-way inter-model agreement as a ground-truth-free reliability signal where labels are absent.
-  \item A \textbf{validity audit of agreement-based evaluation}: chance-corrected agreement statistics, per-model label priors, confusion structure with uncertainty estimates, a majority-vote ensemble scored against ground truth, and semantic (embedding, entailment, BERTScore) scoring of the free-text explanations.
+  \item A \textbf{validity audit of agreement-based evaluation}: chance-corrected agreement statistics, per-model label priors, confusion structure with uncertainty estimates, a majority-vote ensemble scored against ground truth, semantic (embedding, entailment, BERTScore) scoring of the free-text explanations, and an LLM judge whose own reliability-vs-validity we measure by perturbation.
 \end{enumerate}
 
 \begin{figure}[t]
@@ -608,6 +608,41 @@ Conditioned on detection, consequence cosine similarity spans $0.452$--$0.560$ (
 The label--text decoupling persists: o4-mini's wrong-axis consequences align better with the references than its exact-type ones ($0.570$ vs.\ $0.557$ cosine), and Claude's nearly match ($0.521$ vs.\ $0.550$).
 Entailment scores are uniformly lower than for explanations ($0.084$--$0.224$ detected), reflecting that a scene admits many distinct valid outcomes but fewer valid reasons.
 
+\subsection{LLM-Judge Corroboration and a Validity Audit}
+\label{sec:judge}
+
+We add an LLM judge as an independent view on explanation quality, and---because judge scores are only as good as the judge---audit the judge itself.
+For every detected exception, a held-out model (Gemini~3.1~Flash-Lite, deliberately \emph{not} one of the evaluated models, to avoid self-preference) sees the action, the reference explanations, and the model explanation, and rules whether they express the \emph{same} reason, are \emph{partially related}, or give a \emph{different} reason (Table~\ref{tab:judge}).
+
+\begin{table}[t]
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{5pt}
+  \caption{LLM-judge reason-match on detected exceptions: fraction judged \emph{same} / \emph{different} reason vs.\ the human references, and the \emph{same}-rate split by whether the predicted type was exact or on the wrong axis. The judge's model ranking matches the semantic metrics of Table~\ref{tab:semantic}.}
+  \label{tab:judge}
+  \begin{tabular}{lrcccc}
+    \toprule
+    Model & $n$ & same $\uparrow$ & different $\downarrow$ & same$\vert$exact & same$\vert$wrong-axis \\
+    \midrule
+    GPT-5.5             & 135 & 0.385 & 0.570 & 0.450 & 0.358 \\
+    Claude Sonnet 5     & 442 & \textbf{0.507} & \textbf{0.430} & \textbf{0.685} & \textbf{0.449} \\
+    Gemini 3.5 Flash    & 319 & 0.329 & 0.536 & 0.286 & 0.350 \\
+    Llama 4 Maverick    & 215 & 0.200 & 0.730 & 0.220 & 0.194 \\
+    \midrule
+    o4-mini (reasoning) & 406 & 0.288 & 0.645 & 0.400 & 0.259 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Two things follow, one confirmatory and one cautionary.
+First, the judge \emph{independently reproduces} the ordering the semantic metrics gave (Claude $>$ GPT-5.5 $>$ Gemini $>$ o4-mini $>$ Llama on \emph{same}-reason), so the explanation-quality picture is not an artifact of a single metric family.
+It also sharpens the reason-first story: for most models the \emph{same}-rate is higher on exact-type rows than on wrong-axis rows (Claude $0.685$ vs.\ $0.449$), a wider gap than the embedding cosine showed---so mistyped detections carry the right reason \emph{less} often than surface similarity implied, though still substantially (wrong-axis \emph{same}-rate $0.19$--$0.45$, and for Gemini even higher on wrong-axis rows).
+
+Second, the audit shows why the judge must not be treated as ground truth.
+Re-judging identical inputs is perfectly stable ($1.000$; the judge is deterministic at temperature~$0$), but reversing the reference order or applying a meaning-preserving surface rewrite (lowercasing, stripping a final period, prepending ``I think'') each flip \textbf{$11.3\%$} of verdicts (stability $0.887$).
+The judge is thus \emph{reliable but not valid}: perfectly self-consistent, yet one verdict in nine is fragile to perturbations that cannot change whether two texts share a reason.
+This is the field's ``reliability without validity'' concern made concrete on our task, and it is the reason we report the judge only alongside the reference-based semantic metrics rather than as a standalone score.
+
 \subsection{A Reason-First Probe: Re-Mapping Reasons to Types}
 \label{sec:remap}
 
@@ -653,7 +688,7 @@ The audit sharpens this picture in three ways.
 First, chance correction shows the consensus is thinner than raw rates suggest (Fleiss $\kappa$ $0.14$--$0.25$), and the whether/why gap is best stated conditionally: models that both flag an exception still disagree on its type roughly half the time (Sec.~\ref{sec:kappa}).
 Second, much of the typed disagreement is systematic rather than scene-specific: each model carries its own prior over exception types, from Gemini's aversion to Object Non-functional to Llama's near-total refusal of Dangerous.
 Third, the agreement signal must not be read as correctness: models agree with each other $2.8\times$ more than with the labels (chance-corrected), the majority vote loses to the best single model on every metric, and the most typical model in the exception consensus is the least accurate exception detector against ground truth (Sec.~\ref{sec:consensus}).
-Fourth, the typed disagreement overstates the semantic disagreement: explanations attached to the wrong type are nearly as aligned with the human references as those attached to the right one, so models often perceive the correct reason and file it under the wrong code (Sec.~\ref{sec:semantic}).
+Fourth, the typed disagreement overstates the semantic disagreement: explanations attached to the wrong type are nearly as aligned with the human references as those attached to the right one, so models often perceive the correct reason and file it under the wrong code (Sec.~\ref{sec:semantic}), a reading an independent LLM judge corroborates while its own perturbation audit warns against over-trusting it (Sec.~\ref{sec:judge}).
 Typed attribution is where frontier VLMs diverge, and where their consensus is least trustworthy.
 
 \paragraph{Limitations.}
