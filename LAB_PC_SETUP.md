@@ -41,6 +41,7 @@ Hugging Face), and the ultralytics SAM weight auto-download.
 ```bash
 python3 -m venv .venv && source .venv/bin/activate     # or your existing GPU env
 pip install "vllm>=0.11" "openai>=2.47" ultralytics
+python3 -m nltk.downloader wordnet omw-1.4   # METEOR (explanation scoring) needs WordNet
 # vllm 0.25 imports symbols from recent openai releases — an older openai gives
 # "ImportError: cannot import name 'NamespaceTool'" at vllm startup (hit 2026-07-23).
 # The lab PC's system nvcc predates the 4080 (compute_89), so serve_vllm.sh exports

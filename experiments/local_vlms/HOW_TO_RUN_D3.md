@@ -16,6 +16,7 @@ Two goals, zero API spend:
 ```bash
 source ~/venvamar/bin/activate          # or a fresh env with torch+CUDA
 pip install "vllm>=0.11" "openai>=2.47"   # old openai breaks vllm import (NamespaceTool)
+python3 -m nltk.downloader wordnet omw-1.4  # METEOR scoring needs WordNet
 ```
 
 First launch of each model downloads its checkpoint (~9 GB) and torch-compiles
