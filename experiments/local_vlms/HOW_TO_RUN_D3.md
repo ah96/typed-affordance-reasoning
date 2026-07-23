@@ -87,6 +87,9 @@ for Exp A the existing `--dry_run` flag of `eval_experiment_a_vision.py`.
 16 GB does not fit 7-8B in bf16 (~17 GB of weights), so `serve_vllm.sh` serves the official
 FP8 checkpoints for the Qwen3-VL pair and fp8-quantizes the others at load time; anything
 larger goes through the OpenRouter `:free` tier (verify the current free list first — it drifts).
+The memory flags in `serve_vllm.sh` (util 0.85, `--max-num-seqs 4`, PIECEWISE CUDA graphs)
+are each pinned by an observed OOM on the 4080 — see the comment above COMMON before raising
+them. The server caps concurrency at 4, so eval `--workers 8` just queues — that is fine.
 
 ## Priorities if GPU time is short
 

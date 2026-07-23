@@ -11,8 +11,8 @@
 # 16 GB notes: 8B models do NOT fit in bf16 (~17 GB of weights alone), so the Qwen3-VL pair
 # uses the official FP8 checkpoints (~9 GB) and the others quantize to fp8 at load time —
 # the 4080 (Ada) runs fp8 natively in vLLM. The reduced context below keeps two ~1024px
-# images plus the prompt well under 8k tokens. If vLLM still OOMs on startup, first lower
-# --gpu-memory-utilization to 0.88, then --max-model-len to 6144.
+# images plus the prompt well under 8k tokens. Memory flags are tuned from observed OOMs;
+# see the comment above COMMON before changing them.
 
 set -euo pipefail
 
@@ -20,9 +20,16 @@ set -euo pipefail
 # kernel fails to build at warmup — use vLLM's native torch sampler instead.
 export VLLM_USE_FLASHINFER_SAMPLER=0
 
-# PIECEWISE-only CUDA graphs: at 16 GB the final FULL-graph capture OOMs (seen with
-# Qwen3-VL-8B-FP8 at util 0.92 — 12 MiB free); piecewise graphs carry nearly all the speedup.
-COMMON=(--port 8000 --max-model-len 8192 --gpu-memory-utilization 0.90
+# Reduce fragmentation so transient vision-encoder peaks can use reserved-but-free memory.
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+
+# 16 GB tuning, from where each higher setting OOM'd with Qwen3-VL-8B-FP8:
+#   util 0.92 -> OOM capturing FULL CUDA graphs (hence PIECEWISE-only);
+#   util 0.90 -> runtime OOM when 3 multi-image prefills hit the ViT encoder at once
+#   (startup profiling under-counts that peak), hence 0.85 + --max-num-seqs 4.
+# Client workers beyond 4 just queue. If it still OOMs: util 0.82, then --max-model-len 6144.
+COMMON=(--port 8000 --max-model-len 8192 --gpu-memory-utilization 0.85
+        --max-num-seqs 4
         --limit-mm-per-prompt '{"image": 2}'
         --compilation-config '{"cudagraph_mode": "PIECEWISE"}')
 

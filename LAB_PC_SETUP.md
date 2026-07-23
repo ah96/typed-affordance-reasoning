@@ -45,6 +45,8 @@ pip install "vllm>=0.11" "openai>=2.47" ultralytics
 # "ImportError: cannot import name 'NamespaceTool'" at vllm startup (hit 2026-07-23).
 # The lab PC's system nvcc predates the 4080 (compute_89), so serve_vllm.sh exports
 # VLLM_USE_FLASHINFER_SAMPLER=0 — otherwise FlashInfer's JIT kernel build crashes warmup.
+# serve_vllm.sh's memory flags (util 0.85, --max-num-seqs 4, PIECEWISE graphs) are pinned
+# by observed 16 GB OOMs — do not raise them without re-testing a full multi-image run.
 # D4 also needs the OOAL repo's own deps (DINOv2 / CLIP) — see its requirements after cloning.
 ```
 
