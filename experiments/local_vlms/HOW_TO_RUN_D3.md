@@ -11,6 +11,17 @@ Two goals, zero API spend:
    voters means fewer 2-2 ties and a stronger majority signal, and open weights are frozen
    snapshots, answering the closed-API drift limitation.
 
+## Status (2026-07-23)
+
+- **DONE — Instruct, exception subset**: 579/579 calls in ~6 min at 8 workers (FP8 serving).
+  mAcc-7 0.190 [0.146, 0.231], mAcc-3 0.649 [0.593, 0.704] — overlapping CIs with o4-mini
+  (0.229 / 0.701). Axis profile is extreme: functional exact 0.333, social exact 0.003 —
+  the 8B collapses the social axis onto functional codes. Raw committed as
+  `experiment_a/results/raw_qwen3_vl_8b_instruct.jsonl`.
+- **NEXT**: Thinking variant on the same subset (step 1 below, second serve key) — the
+  ablation question is whether CoT specifically recovers the social axis.
+- Then: full 13,512-pair Instruct run, then the step-2 agreement replay.
+
 ## Setup (once)
 
 ```bash
@@ -44,16 +55,24 @@ with `experiment_a/build_instance_masks.py` (downloads via the HF mirror) or cop
 # Ctrl-C terminal 1, then the same with:    qwen3_thinking / qwen3_vl_8b_thinking
 ```
 
-Then the full 13,512-pair run for the Instruct model (drop `--gt_exceptions_only`; roughly a
-long overnight run at 8 workers). Run the Thinking variant on the full set too if time allows —
-otherwise the exception subset already gives the ablation table. Afterwards export and score
-exactly like the paper models:
+Observed timing: the 579-call exception subset takes ~6 min for Instruct; expect the
+Thinking variant to be several times slower (it generates the `<think>` block, up to 4,096
+tokens). The full 13,512-pair run (drop `--gt_exceptions_only`) extrapolates to ~2-3 h for
+Instruct. Run the Thinking variant on the full set too if time allows — otherwise the
+exception subset already gives the ablation table.
+
+**Before committing** — the per-call cache is git-ignored, so a manual run leaves nothing
+for git until you export (from `experiment_a/`):
 
 ```bash
-python3 export_raw_results.py --cache_dir cache_a_local     # -> results/raw_<name>.jsonl
+python3 export_raw_results.py --cache_dir cache_a_local --out_dir results
 cd results && python3 score_from_raw.py --exceptions_only
-cd ../../analysis && python3 analysis_confusion.py && python3 analysis_ensemble.py
+git add results && git commit && git push          # then, on the laptop: git pull
 ```
+
+Richer breakdowns run on the laptop (no GPU needed), from `experiments/analysis/`:
+`python3 analysis_confusion.py` (7x7 confusion, axis split, bootstrap CIs; writes
+`out/confusion.json`) and `python3 analysis_ensemble.py`.
 
 ## 2. Agreement-pool replay (Experiment B regions)
 

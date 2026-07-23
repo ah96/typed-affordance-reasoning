@@ -118,7 +118,15 @@ Rule of thumb: the GPU is needed only to run a model's weights locally.
 
 ## 7. After a run
 
-Commit the new `results/*.jsonl` and push; the laptop side folds the numbers into the paper.
+The per-call caches (`cache_a_local/` etc.) are git-ignored — after a *manual* eval run
+there is nothing to commit until you export (the `run_d3_*.sh` drivers do this for you):
+
+```bash
+cd experiments/experiment_a
+python3 export_raw_results.py --cache_dir cache_a_local --out_dir results
+```
+
+Then commit the new `results/*.jsonl` and push; the laptop side folds the numbers into the paper.
 The big USB'd inputs (`ooal_models_amar/`, `datasets/AGD20K/`) stay git-ignored — don't commit
 them. Detailed notes live in
 [`experiments/local_vlms/HOW_TO_RUN_D3.md`](experiments/local_vlms/HOW_TO_RUN_D3.md) and
