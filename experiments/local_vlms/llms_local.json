@@ -4,22 +4,22 @@
     "provider": "openai_compat",
     "base_url": "http://localhost:8000/v1",
     "api_key": "local",
-    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "model": "Qwen/Qwen3-VL-8B-Instruct-FP8",
     "temperature": 0.0,
     "max_tokens": 512,
     "supports_vision": true,
-    "_note": "Same base model as the -Thinking variant below: the pair isolates chain-of-thought with weights held fixed."
+    "_note": "Official FP8 checkpoint (bf16 needs ~17 GB and OOMs the 4080). Same base model as the -Thinking variant below: the pair isolates chain-of-thought with weights held fixed."
   },
   {
     "name": "qwen3_vl_8b_thinking",
     "provider": "openai_compat",
     "base_url": "http://localhost:8000/v1",
     "api_key": "local",
-    "model": "Qwen/Qwen3-VL-8B-Thinking",
+    "model": "Qwen/Qwen3-VL-8B-Thinking-FP8",
     "temperature": 0.0,
     "max_tokens": 4096,
     "supports_vision": true,
-    "_note": "Serve with vLLM's reasoning parser so message.content carries only the post-think answer (see serve_vllm.sh); the JSON extractor must never see the <think> block."
+    "_note": "Official FP8 checkpoint. Serve with vLLM's reasoning parser so message.content carries only the post-think answer (see serve_vllm.sh); the JSON extractor must never see the <think> block."
   },
   {
     "name": "internvl3_8b",

@@ -79,8 +79,9 @@ for Exp A the existing `--dry_run` flag of `eval_experiment_a_vision.py`.
 | qwen2_5_vl_7b | `./serve_vllm.sh qwen25` | fallback if vLLM lacks Qwen3-VL |
 | or_free_example | — (OpenRouter `:free`) | larger open models, rate-limited |
 
-16 GB fits 7-8B in bf16 with the flags in `serve_vllm.sh`; anything larger goes through the
-OpenRouter `:free` tier (verify the current free list first — it drifts).
+16 GB does not fit 7-8B in bf16 (~17 GB of weights), so `serve_vllm.sh` serves the official
+FP8 checkpoints for the Qwen3-VL pair and fp8-quantizes the others at load time; anything
+larger goes through the OpenRouter `:free` tier (verify the current free list first — it drifts).
 
 ## Priorities if GPU time is short
 

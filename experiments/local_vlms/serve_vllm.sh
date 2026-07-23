@@ -8,8 +8,10 @@
 #   ./serve_vllm.sh internvl3
 #   ./serve_vllm.sh qwen25
 #
-# 16 GB notes: 8B models in bf16 fit with the reduced context below (two ~1024px images plus
-# the prompt stay well under 8k tokens). If vLLM OOMs on startup, first lower
+# 16 GB notes: 8B models do NOT fit in bf16 (~17 GB of weights alone), so the Qwen3-VL pair
+# uses the official FP8 checkpoints (~9 GB) and the others quantize to fp8 at load time —
+# the 4080 (Ada) runs fp8 natively in vLLM. The reduced context below keeps two ~1024px
+# images plus the prompt well under 8k tokens. If vLLM still OOMs on startup, first lower
 # --gpu-memory-utilization to 0.88, then --max-model-len to 6144.
 
 set -euo pipefail
@@ -19,18 +21,19 @@ COMMON=(--port 8000 --max-model-len 8192 --gpu-memory-utilization 0.92
 
 case "${1:-}" in
   qwen3_instruct)
-    vllm serve Qwen/Qwen3-VL-8B-Instruct "${COMMON[@]}"
+    vllm serve Qwen/Qwen3-VL-8B-Instruct-FP8 "${COMMON[@]}"
     ;;
   qwen3_thinking)
     # The reasoning parser routes the <think> block to reasoning_content, so the client's
     # message.content is only the final JSON answer.
-    vllm serve Qwen/Qwen3-VL-8B-Thinking "${COMMON[@]}" --reasoning-parser qwen3
+    vllm serve Qwen/Qwen3-VL-8B-Thinking-FP8 "${COMMON[@]}" --reasoning-parser qwen3
     ;;
   internvl3)
-    vllm serve OpenGVLab/InternVL3-8B "${COMMON[@]}" --trust-remote-code
+    # No official FP8 release — quantize the bf16 weights to fp8 at load time.
+    vllm serve OpenGVLab/InternVL3-8B "${COMMON[@]}" --trust-remote-code --quantization fp8
     ;;
   qwen25)
-    vllm serve Qwen/Qwen2.5-VL-7B-Instruct "${COMMON[@]}"
+    vllm serve Qwen/Qwen2.5-VL-7B-Instruct "${COMMON[@]}" --quantization fp8
     ;;
   *)
     echo "usage: $0 {qwen3_instruct|qwen3_thinking|internvl3|qwen25}" >&2
