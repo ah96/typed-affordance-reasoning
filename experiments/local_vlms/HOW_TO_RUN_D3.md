@@ -15,8 +15,11 @@ Two goals, zero API spend:
 
 ```bash
 source ~/venvamar/bin/activate          # or a fresh env with torch+CUDA
-pip install "vllm>=0.11"
+pip install "vllm>=0.11" "openai>=2.47"   # old openai breaks vllm import (NamespaceTool)
 ```
+
+First launch of each model downloads its checkpoint (~9 GB) and torch-compiles
+(~10 min total); later launches reuse both caches and are ready in ~2–4 min.
 
 Everything below runs from this directory. Models are served one at a time on
 `http://localhost:8000/v1`; the runners talk to whatever is being served.

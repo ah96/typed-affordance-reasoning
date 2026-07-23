@@ -16,8 +16,11 @@
 
 set -euo pipefail
 
-COMMON=(--port 8000 --max-model-len 8192 --gpu-memory-utilization 0.92
-        --limit-mm-per-prompt '{"image": 2}')
+# PIECEWISE-only CUDA graphs: at 16 GB the final FULL-graph capture OOMs (seen with
+# Qwen3-VL-8B-FP8 at util 0.92 — 12 MiB free); piecewise graphs carry nearly all the speedup.
+COMMON=(--port 8000 --max-model-len 8192 --gpu-memory-utilization 0.90
+        --limit-mm-per-prompt '{"image": 2}'
+        --compilation-config '{"cudagraph_mode": "PIECEWISE"}')
 
 case "${1:-}" in
   qwen3_instruct)

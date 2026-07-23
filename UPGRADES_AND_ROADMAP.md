@@ -140,7 +140,9 @@ train-split explanation→code pairs, applied to the models' *own* committed exp
 
 - **Same-weights reasoning ablation.** Qwen3-VL-8B Instruct vs Thinking isolates chain-of-thought
   with weights held fixed — the clean test the o4-mini comparison could not give (it confounded
-  reasoning with model identity).
+  reasoning with model identity). Both variants run from the official FP8 checkpoints (bf16 needs
+  ~17 GB and OOMs the 16 GB 4080), so the pair stays internally consistent — state FP8 in the
+  paper's setup sentence when this section is written.
 - **Widened agreement pool.** Replays the *exact* committed Exp B regions to new models (SAM never
   re-runs), so open models judge identical inputs → more voters, fewer 2–2 ties, and frozen
   reproducible snapshots that answer the closed-API-drift limitation.

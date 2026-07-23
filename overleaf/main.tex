@@ -338,6 +338,9 @@ ADE annotates three actions that map to our set as \texttt{sit\_on}$\rightarrow$
 We evaluate \numactions{} actions from the AGD20K affordance vocabulary~\cite{agd20k}: \textbf{sit\_on}, \textbf{hold}, \textbf{carry}, \textbf{cut}, \textbf{throw}, \textbf{ride} --- which is a broader set than the three actions ADE annotates, applied to ADE20K scenes whose multi-object context the taxonomy's physical and social exceptions require.
 We query four standard frontier VLMs (\textbf{GPT-5.5}, \textbf{Claude Sonnet~5}, \textbf{Gemini~3.5~Flash}, \textbf{Llama~4~Maverick}) at temperature $0$ where supported, with reasoning disabled and up to $512$ response tokens.
 The chain-of-thought model \textbf{o4-mini} is evaluated on a held-out subset (up to $2{,}048$ tokens) to test whether explicit reasoning improves exception attribution.
+% D3 (when local results land): the Qwen3-VL-8B Instruct/Thinking pair is served locally with
+% vLLM from the official FP8 checkpoints — both variants FP8, so the same-weights ablation stays
+% internally consistent. State this here; bf16 does not fit the 16 GB GPU used.
 
 \paragraph{Segmentation and region budget.}
 SAM~2 generates up to 50 masks per image for the area-ranked baseline, and SAM~3 provides concept-targeted selection (Sec.~\ref{sec:pipeline}). 

@@ -40,7 +40,9 @@ Hugging Face), and the ultralytics SAM weight auto-download.
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate     # or your existing GPU env
-pip install "vllm>=0.11" ultralytics
+pip install "vllm>=0.11" "openai>=2.47" ultralytics
+# vllm 0.25 imports symbols from recent openai releases — an older openai gives
+# "ImportError: cannot import name 'NamespaceTool'" at vllm startup (hit 2026-07-23).
 # D4 also needs the OOAL repo's own deps (DINOv2 / CLIP) — see its requirements after cloning.
 ```
 
