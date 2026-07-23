@@ -16,6 +16,10 @@
 
 set -euo pipefail
 
+# The lab PC's system nvcc predates Ada (compute_89), so FlashInfer's JIT sampling
+# kernel fails to build at warmup — use vLLM's native torch sampler instead.
+export VLLM_USE_FLASHINFER_SAMPLER=0
+
 # PIECEWISE-only CUDA graphs: at 16 GB the final FULL-graph capture OOMs (seen with
 # Qwen3-VL-8B-FP8 at util 0.92 — 12 MiB free); piecewise graphs carry nearly all the speedup.
 COMMON=(--port 8000 --max-model-len 8192 --gpu-memory-utilization 0.90

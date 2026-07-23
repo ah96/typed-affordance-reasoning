@@ -20,6 +20,8 @@ pip install "vllm>=0.11" "openai>=2.47"   # old openai breaks vllm import (Names
 
 First launch of each model downloads its checkpoint (~9 GB) and torch-compiles
 (~10 min total); later launches reuse both caches and are ready in ~2–4 min.
+`serve_vllm.sh` also exports `VLLM_USE_FLASHINFER_SAMPLER=0` — the lab PC's system
+nvcc predates the 4080, so FlashInfer's JIT sampling kernel cannot build there.
 
 Everything below runs from this directory. Models are served one at a time on
 `http://localhost:8000/v1`; the runners talk to whatever is being served.
