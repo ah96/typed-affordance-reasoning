@@ -1,0 +1,1 @@
+{"run": {"128": {"consequence": "you will get kicked out", "explanation": "it is improper to sit on the floor of such a nice building"}}, "sit": {"128": {"consequence": "people would think you are annoying", "explanation": "you would be in the way of the door"}, "255": {"consequence": "people would think you are annoying", "explanation": "you would be in the way of the door"}}}

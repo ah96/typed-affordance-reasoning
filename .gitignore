@@ -8,7 +8,12 @@
 # ============================================================================
 
 # ---- Large datasets (USB to the lab PC; never in git) ----------------------
-datasets/
+# Exception: ADE-Affordance-flat is 79 MB of small text annotations (exco JSON +
+# relationship TXT) and is the label source for Experiment A and for D5 Stage 1
+# training, so it travels by git rather than by USB. The pixels it refers to are
+# still fetched separately (see d5_reason_first/HOW_TO_RUN_D5.md step 1).
+datasets/*
+!datasets/ADE-Affordance-flat/
 ooal_models_amar/
 sam_vit_h_4b8939.pth
 

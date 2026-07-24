@@ -1,0 +1,1 @@
+{"grasp": {"45": {"consequence": "if you take it the food will drop on the floor", "explanation": "there is food under that plate"}}, "run": {"23": {"consequence": "you will hit it", "explanation": "there is food"}}, "sit": {"23": {"consequence": "you will be asked to leave the property", "explanation": "you cannot sit under the table its not allowed"}}}

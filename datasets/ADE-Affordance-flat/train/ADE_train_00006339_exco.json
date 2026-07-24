@@ -1,0 +1,1 @@
+{"run": {"93": {"consequence": "robbie shouldnt run here because he could collide with someone", "explanation": "robbie shouldnt run here because it is a hallway"}}, "sit": {"93": {"consequence": "youll be in the middle of a hallway blocking people", "explanation": "you dont want to sit in the middle of a hallway"}}}

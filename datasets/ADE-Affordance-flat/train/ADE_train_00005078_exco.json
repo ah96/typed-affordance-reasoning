@@ -1,0 +1,1 @@
+{"run": {"55": {"consequence": "you would damage the car", "explanation": "it is not safe to run here"}}, "sit": {"200": {"consequence": "the driver wouldnt be able to see out of the windshield", "explanation": "this is the dashboard"}, "219": {"consequence": "the driver wouldnt be able to see out of the windshield", "explanation": "this is the dashboard"}}}

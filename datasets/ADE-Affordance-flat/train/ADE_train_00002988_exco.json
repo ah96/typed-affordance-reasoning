@@ -1,0 +1,1 @@
+{"run": {"60": {"consequence": "you would get stuck in the small doorway", "explanation": "you dont have enough room in this space to run"}}, "sit": {"60": {"consequence": "people cant use the bathroom", "explanation": "this is the doorway leading out of the bathroom"}}}

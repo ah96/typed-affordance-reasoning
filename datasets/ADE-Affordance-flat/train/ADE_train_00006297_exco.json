@@ -1,0 +1,1 @@
+{"run": {"102": {"consequence": "you could fall in the hallway", "explanation": "the hallway is too narrow for running"}}, "sit": {"102": {"consequence": "people could trip over you", "explanation": "people may need to use the stairs"}, "204": {"consequence": "people could trip over you", "explanation": "people may need to use the stairs"}}}

@@ -1,0 +1,1 @@
+{"run": {"28": {"consequence": "running in console may affect the flying security", "explanation": "it is not allowed to run in control console"}}, "sit": {"28": {"consequence": "you might get hit by a chair", "explanation": "the area is tight"}, "113": {"consequence": "you might get hit by a chair", "explanation": "the area is tight"}}}

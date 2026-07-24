@@ -1,0 +1,1 @@
+{"run": {"73": {"consequence": "you may get hit", "explanation": "there are cars"}}, "sit": {"61": {"consequence": "you may get hit by a car", "explanation": "cars need to pass here"}, "73": {"consequence": "you may get hit by a car", "explanation": "cars need to pass here"}}}

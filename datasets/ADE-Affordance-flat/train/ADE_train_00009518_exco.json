@@ -1,0 +1,1 @@
+{"grasp": {"180": {"consequence": "you will be asked to leave", "explanation": "this is not yours"}}, "run": {"60": {"consequence": "you will hit it", "explanation": "there is furniture"}}, "sit": {"60": {"consequence": "you could get kicked out of the restaurant", "explanation": "its inappropriate to sit on the floor of a restaurant"}}}

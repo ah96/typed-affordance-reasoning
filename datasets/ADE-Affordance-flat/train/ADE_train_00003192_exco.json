@@ -1,0 +1,1 @@
+{"run": {"55": {"consequence": "there is insufficient space to run in the room and you may damage objects in the room", "explanation": "you should not run in the room"}}, "sit": {"55": {"consequence": "there is not enough room on the carpet to sit", "explanation": "we cant sit on the carpeted area"}}}

@@ -1,0 +1,1 @@
+{"run": {"60": {"consequence": "you may slip on it", "explanation": "this floor is slippery"}}, "sit": {"60": {"consequence": "people will trip on you", "explanation": "people walk here"}, "128": {"consequence": "people will trip on you", "explanation": "people walk here"}}}

@@ -1,0 +1,33 @@
+{
+  "zip": "/home/amar/git/aff_reason_llm/datasets/ADE-Affordance.zip",
+  "out": "/home/amar/git/aff_reason_llm/ADE-Affordance-flat",
+  "paired_only": false,
+  "on_conflict": "error",
+  "counts_in_zip": {
+    "exco": 9068,
+    "relationship": 10011,
+    "paired_bases": 8984,
+    "exco_only_bases": 84,
+    "relationship_only_bases": 1027
+  },
+  "extracted": {
+    "training": {
+      "exco": 7190,
+      "relationship": 8011,
+      "pairs": 7106
+    },
+    "validation": {
+      "exco": 903,
+      "relationship": 1000,
+      "pairs": 903
+    },
+    "testing": {
+      "exco": 975,
+      "relationship": 1000,
+      "pairs": 975
+    },
+    "unknown_split": 0
+  },
+  "manifest_csv": "./ADE-Affordance-flat/manifest.csv",
+  "collisions_detected": 0
+}

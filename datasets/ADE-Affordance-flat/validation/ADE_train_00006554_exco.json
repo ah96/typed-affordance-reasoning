@@ -1,0 +1,1 @@
+{"run": {"142": {"consequence": "you could damage the desk or chair", "explanation": "there is a desk and chair there"}}, "sit": {"142": {"consequence": "you wouldnt be able to reach the desk and therefore unable to work", "explanation": "there is an empty desk chair available"}}}

@@ -1,0 +1,1 @@
+{"run": {"64": {"consequence": "you will hit the area", "explanation": "you will not find room in the space"}}, "sit": {"128": {"consequence": "someone is already sitting in it so you cant", "explanation": "this is a seat on an amusement park ride"}, "64": {"consequence": "someone is already sitting in it so you cant", "explanation": "this is a seat on an amusement park ride"}}}

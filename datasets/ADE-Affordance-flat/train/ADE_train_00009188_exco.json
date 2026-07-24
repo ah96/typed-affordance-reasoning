@@ -1,0 +1,1 @@
+{"run": {"32": {"consequence": "you may be hit by a car", "explanation": "it is a freeway"}, "96": {"consequence": "you may be hit by a car", "explanation": "it is a freeway"}}, "sit": {"128": {"consequence": "injury or death", "explanation": "unsafe"}, "96": {"consequence": "injury or death", "explanation": "unsafe"}}}

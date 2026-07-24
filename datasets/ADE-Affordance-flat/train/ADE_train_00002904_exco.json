@@ -1,0 +1,1 @@
+{"run": {"45": {"consequence": "you might run into and break the glass table", "explanation": "theres not enough room to run"}}, "sit": {"90": {"consequence": "the table is full of stuff and glass might break", "explanation": "you cant sit on glass"}, "45": {"consequence": "the table is full of stuff and glass might break", "explanation": "you cant sit on glass"}}}

@@ -1,0 +1,1 @@
+{"run": {"45": {"consequence": "there are to many items to trip over", "explanation": "robbie cannot run in a small room"}}, "sit": {"45": {"consequence": "you would be asked to move", "explanation": "you would block access to the walkway"}, "105": {"consequence": "you would be asked to move", "explanation": "you would block access to the walkway"}}}
