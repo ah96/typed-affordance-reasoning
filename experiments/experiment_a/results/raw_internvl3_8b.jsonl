@@ -1,0 +1,579 @@
+{"model": "internvl3_8b", "image": "ADE_train_00000014", "action": "grasp", "region_id": 202, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000014", "action": "grasp", "region_id": 223, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000014", "action": "run", "region_id": 85, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000014", "action": "sit", "region_id": 43, "gt": 4, "pred": 2, "explanation": "The radiator is not functional for sitting.", "consequence": "Sitting on the radiator could lead to discomfort or injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00000023", "action": "grasp", "region_id": 194, "gt": 4, "pred": 2, "explanation": "The object is a bathtub, which is non-functional for grasping.", "consequence": "Grasping the bathtub would not serve any practical purpose."}
+{"model": "internvl3_8b", "image": "ADE_train_00000023", "action": "grasp", "region_id": 231, "gt": 4, "pred": 2, "explanation": "The vase is decorative and not functional for grasping.", "consequence": "Grasping the vase would likely result in damage to the flowers or vase."}
+{"model": "internvl3_8b", "image": "ADE_train_00000023", "action": "run", "region_id": 61, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000023", "action": "sit", "region_id": 61, "gt": 4, "pred": 2, "explanation": "The bathtub is not functional for sitting as it is designed for bathing.", "consequence": "Attempting to sit on the bathtub could lead to discomfort or instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00000031", "action": "run", "region_id": 85, "gt": 6, "pred": 3, "explanation": "The shower area is a physical obstacle.", "consequence": "Running on the tiled floor near the shower could lead to slipping."}
+{"model": "internvl3_8b", "image": "ADE_train_00000031", "action": "sit", "region_id": 238, "gt": 3, "pred": 2, "explanation": "The chair is not designed for sitting as it lacks a cushion or backrest.", "consequence": "Sitting on the chair may be uncomfortable or unsafe."}
+{"model": "internvl3_8b", "image": "ADE_train_00000047", "action": "run", "region_id": 35, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000057", "action": "grasp", "region_id": 100, "gt": 4, "pred": 2, "explanation": "The vase is decorative and not functional for grasping.", "consequence": "Grasping the vase would likely result in damage to its delicate surface."}
+{"model": "internvl3_8b", "image": "ADE_train_00000057", "action": "run", "region_id": 62, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000057", "action": "sit", "region_id": 62, "gt": 4, "pred": 2, "explanation": "The bathtub is not functional for sitting on as it is designed for bathing.", "consequence": "Attempting to sit on the bathtub could lead to discomfort or instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00000057", "action": "sit", "region_id": 116, "gt": 4, "pred": 3, "explanation": "The steps are a physical obstacle.", "consequence": "They may cause tripping or difficulty in movement."}
+{"model": "internvl3_8b", "image": "ADE_train_00000063", "action": "run", "region_id": 93, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000063", "action": "sit", "region_id": 93, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000079", "action": "run", "region_id": 28, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000079", "action": "sit", "region_id": 28, "gt": 3, "pred": 2, "explanation": "The stool is not designed for sitting.", "consequence": "Attempting to sit on the stool may cause discomfort or instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00000088", "action": "run", "region_id": 51, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000088", "action": "run", "region_id": 179, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000088", "action": "sit", "region_id": 51, "gt": 4, "pred": 2, "explanation": "The toilet is not functional for sitting due to its design.", "consequence": "Attempting to sit on the toilet lid may cause discomfort or instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00000088", "action": "sit", "region_id": 179, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000096", "action": "run", "region_id": 73, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000096", "action": "sit", "region_id": 73, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000098", "action": "run", "region_id": 78, "gt": 6, "pred": 3, "explanation": "The floor tiles are uneven, posing a physical obstacle.", "consequence": "Running on the uneven tiles could cause tripping or slipping."}
+{"model": "internvl3_8b", "image": "ADE_train_00000098", "action": "sit", "region_id": 78, "gt": 4, "pred": 2, "explanation": "The toilet seat is wooden and may not be comfortable or safe to sit on.", "consequence": "May cause discomfort or injury due to the material and height."}
+{"model": "internvl3_8b", "image": "ADE_train_00000107", "action": "grasp", "region_id": 168, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000107", "action": "run", "region_id": 44, "gt": 6, "pred": 3, "explanation": "The bathtub is a physical obstacle on the floor.", "consequence": "It could cause tripping or slipping."}
+{"model": "internvl3_8b", "image": "ADE_train_00000107", "action": "sit", "region_id": 44, "gt": 4, "pred": 2, "explanation": "The bathtub is not functional for sitting on.", "consequence": "Attempting to sit on the bathtub could lead to instability and discomfort."}
+{"model": "internvl3_8b", "image": "ADE_train_00000162", "action": "run", "region_id": 85, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000162", "action": "run", "region_id": 227, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000174", "action": "run", "region_id": 54, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000174", "action": "run", "region_id": 255, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000210", "action": "run", "region_id": 102, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000221", "action": "run", "region_id": 60, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000231", "action": "sit", "region_id": 38, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000253", "action": "run", "region_id": 33, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000259", "action": "run", "region_id": 118, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000259", "action": "run", "region_id": 137, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000259", "action": "sit", "region_id": 137, "gt": 4, "pred": 2, "explanation": "The object is a toilet, which is not functional for sitting on.", "consequence": "Attempting to sit on the toilet would be impractical and uncomfortable."}
+{"model": "internvl3_8b", "image": "ADE_train_00000272", "action": "run", "region_id": 85, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000283", "action": "run", "region_id": 70, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000283", "action": "sit", "region_id": 70, "gt": 4, "pred": 2, "explanation": "The chair is designed for sitting, but its unconventional shape may make it uncomfortable.", "consequence": "Sitting on the chair might be awkward due to its unique design."}
+{"model": "internvl3_8b", "image": "ADE_train_00000305", "action": "run", "region_id": 93, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000319", "action": "run", "region_id": 48, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000319", "action": "sit", "region_id": 48, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000339", "action": "grasp", "region_id": 224, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000339", "action": "run", "region_id": 41, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000341", "action": "grasp", "region_id": 213, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000341", "action": "sit", "region_id": 255, "gt": 2, "pred": 2, "explanation": "The nightstand is not designed for sitting.", "consequence": "Attempting to sit on the nightstand would be uncomfortable and impractical."}
+{"model": "internvl3_8b", "image": "ADE_train_00000348", "action": "run", "region_id": 29, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000363", "action": "run", "region_id": 29, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000369", "action": "run", "region_id": 81, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000382", "action": "run", "region_id": 73, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000392", "action": "run", "region_id": 31, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000431", "action": "grasp", "region_id": 182, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000431", "action": "grasp", "region_id": 219, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000431", "action": "run", "region_id": 109, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000452", "action": "run", "region_id": 51, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000452", "action": "run", "region_id": 61, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000465", "action": "run", "region_id": 85, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000491", "action": "run", "region_id": 51, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000491", "action": "sit", "region_id": 51, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000493", "action": "run", "region_id": 49, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000493", "action": "run", "region_id": 170, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000509", "action": "run", "region_id": 54, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000513", "action": "run", "region_id": 85, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000524", "action": "grasp", "region_id": 224, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000524", "action": "run", "region_id": 31, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000524", "action": "sit", "region_id": 31, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000529", "action": "run", "region_id": 71, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000529", "action": "sit", "region_id": 71, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000544", "action": "grasp", "region_id": 70, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000544", "action": "grasp", "region_id": 81, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000544", "action": "run", "region_id": 46, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000544", "action": "sit", "region_id": 46, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000545", "action": "grasp", "region_id": 159, "gt": 4, "pred": 2, "explanation": "The object is a small, round knob, which is non-functional for grasping.", "consequence": "Grasping the knob would not achieve any functional purpose."}
+{"model": "internvl3_8b", "image": "ADE_train_00000545", "action": "grasp", "region_id": 255, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000545", "action": "run", "region_id": 80, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000548", "action": "grasp", "region_id": 243, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000548", "action": "grasp", "region_id": 255, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000548", "action": "run", "region_id": 61, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000602", "action": "grasp", "region_id": 94, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000602", "action": "grasp", "region_id": 111, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000602", "action": "grasp", "region_id": 205, "gt": 4, "pred": 2, "explanation": "The object is a decorative fountain, not functional for grasping.", "consequence": "Grasping it would likely result in damage or inability to use it as intended."}
+{"model": "internvl3_8b", "image": "ADE_train_00000602", "action": "run", "region_id": 17, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000612", "action": "grasp", "region_id": 165, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000612", "action": "grasp", "region_id": 170, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000612", "action": "run", "region_id": 30, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000633", "action": "run", "region_id": 34, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000661", "action": "grasp", "region_id": 31, "gt": 4, "pred": 2, "explanation": "The vase is decorative and not functional for grasping.", "consequence": "Grasping the vase would likely result in damage to its delicate surface."}
+{"model": "internvl3_8b", "image": "ADE_train_00000661", "action": "grasp", "region_id": 56, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000661", "action": "grasp", "region_id": 102, "gt": 4, "pred": 2, "explanation": "The mortar is not functional for grasping.", "consequence": "It is a decorative object, not meant for use."}
+{"model": "internvl3_8b", "image": "ADE_train_00000661", "action": "grasp", "region_id": 112, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000661", "action": "grasp", "region_id": 173, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000661", "action": "run", "region_id": 15, "gt": 5, "pred": 2, "explanation": "The armchair is not functional for running on.", "consequence": "Attempting to run on the armchair would likely cause damage to the furniture."}
+{"model": "internvl3_8b", "image": "ADE_train_00000661", "action": "run", "region_id": 163, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000669", "action": "run", "region_id": 31, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000669", "action": "run", "region_id": 36, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000669", "action": "run", "region_id": 41, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000676", "action": "run", "region_id": 32, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000676", "action": "run", "region_id": 185, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000676", "action": "run", "region_id": 255, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000688", "action": "grasp", "region_id": 104, "gt": 2, "pred": 2, "explanation": "The wooden vase is decorative and not functional for grasping.", "consequence": "Grasping the vase would likely result in damage to its surface."}
+{"model": "internvl3_8b", "image": "ADE_train_00000688", "action": "grasp", "region_id": 213, "gt": 2, "pred": 2, "explanation": "The dried flowers are not functional for grasping.", "consequence": "Grasping dried flowers would be impractical and ineffective."}
+{"model": "internvl3_8b", "image": "ADE_train_00000688", "action": "run", "region_id": 42, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000688", "action": "sit", "region_id": 42, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000696", "action": "run", "region_id": 59, "gt": 3, "pred": 2, "explanation": "The couch is upholstered and not designed for running on.", "consequence": "Running on the couch could damage its fabric."}
+{"model": "internvl3_8b", "image": "ADE_train_00000696", "action": "run", "region_id": 178, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000696", "action": "sit", "region_id": 59, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000696", "action": "sit", "region_id": 178, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000708", "action": "grasp", "region_id": 205, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000708", "action": "grasp", "region_id": 211, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000708", "action": "grasp", "region_id": 216, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000708", "action": "run", "region_id": 28, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000708", "action": "sit", "region_id": 28, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000715", "action": "grasp", "region_id": 58, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000715", "action": "grasp", "region_id": 80, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000715", "action": "grasp", "region_id": 102, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000715", "action": "grasp", "region_id": 138, "gt": 4, "pred": 2, "explanation": "The fern is a non-functional object for grasping.", "consequence": "Grasping the fern would not serve any practical purpose."}
+{"model": "internvl3_8b", "image": "ADE_train_00000715", "action": "run", "region_id": 29, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000715", "action": "sit", "region_id": 29, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000719", "action": "run", "region_id": 43, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000719", "action": "sit", "region_id": 38, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000719", "action": "sit", "region_id": 144, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000720", "action": "grasp", "region_id": 159, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000720", "action": "grasp", "region_id": 164, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000720", "action": "grasp", "region_id": 221, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000720", "action": "grasp", "region_id": 244, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000720", "action": "run", "region_id": 17, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000724", "action": "grasp", "region_id": 123, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000724", "action": "grasp", "region_id": 132, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000733", "action": "run", "region_id": 55, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000737", "action": "run", "region_id": 28, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000737", "action": "sit", "region_id": 28, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000746", "action": "run", "region_id": 43, "gt": 3, "pred": 2, "explanation": "The couch is non-functional for running on due to its soft fabric.", "consequence": "Attempting to run on the couch could damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00000751", "action": "grasp", "region_id": 208, "gt": 2, "pred": 2, "explanation": "The object is a decorative vase, which is non-functional for grasping.", "consequence": "Grasping the vase would not serve any practical purpose."}
+{"model": "internvl3_8b", "image": "ADE_train_00000751", "action": "grasp", "region_id": 233, "gt": 2, "pred": 2, "explanation": "The object is a bar stool, which is non-functional for grasping.", "consequence": "Grasping the bar stool would not allow for a firm hold, making it unsuitable for the action."}
+{"model": "internvl3_8b", "image": "ADE_train_00000751", "action": "grasp", "region_id": 237, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000751", "action": "run", "region_id": 33, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000751", "action": "run", "region_id": 40, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000751", "action": "run", "region_id": 248, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000751", "action": "sit", "region_id": 248, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000753", "action": "grasp", "region_id": 155, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000753", "action": "run", "region_id": 27, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000770", "action": "run", "region_id": 51, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000792", "action": "run", "region_id": 46, "gt": 3, "pred": 2, "explanation": "The couch is not functional for running on.", "consequence": "Attempting to run on the couch would likely damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00000794", "action": "grasp", "region_id": 159, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000794", "action": "grasp", "region_id": 223, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000794", "action": "run", "region_id": 32, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000794", "action": "run", "region_id": 191, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000794", "action": "sit", "region_id": 32, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000794", "action": "sit", "region_id": 191, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000815", "action": "grasp", "region_id": 159, "gt": 2, "pred": 2, "explanation": "The object is a decorative vase, not functional for grasping.", "consequence": "Grasping the vase would likely damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00000815", "action": "grasp", "region_id": 183, "gt": 2, "pred": 2, "explanation": "The object is a decorative vase, which is non-functional for grasping.", "consequence": "Grasping the vase would not serve any practical purpose."}
+{"model": "internvl3_8b", "image": "ADE_train_00000815", "action": "grasp", "region_id": 191, "gt": 2, "pred": 2, "explanation": "The object is a decorative vase, which is non-functional for grasping.", "consequence": "Grasping the vase would not serve any practical purpose."}
+{"model": "internvl3_8b", "image": "ADE_train_00000815", "action": "run", "region_id": 48, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000815", "action": "run", "region_id": 207, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000815", "action": "sit", "region_id": 48, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000815", "action": "sit", "region_id": 207, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000831", "action": "grasp", "region_id": 65, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000831", "action": "run", "region_id": 26, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000831", "action": "run", "region_id": 163, "gt": 3, "pred": 2, "explanation": "The wooden chest is not functional for running on.", "consequence": "Attempting to run on the chest could damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00000831", "action": "sit", "region_id": 26, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000831", "action": "sit", "region_id": 163, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000844", "action": "grasp", "region_id": 143, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000844", "action": "grasp", "region_id": 233, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000844", "action": "run", "region_id": 38, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000844", "action": "run", "region_id": 45, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000844", "action": "run", "region_id": 225, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000844", "action": "sit", "region_id": 225, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000866", "action": "grasp", "region_id": 179, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000866", "action": "grasp", "region_id": 255, "gt": 4, "pred": 2, "explanation": "The object is a potted plant, which is non-functional for grasping.", "consequence": "Grasping the plant would not serve any practical purpose."}
+{"model": "internvl3_8b", "image": "ADE_train_00000866", "action": "run", "region_id": 62, "gt": 4, "pred": 2, "explanation": "The couch is not functional for running on.", "consequence": "Attempting to run on the couch would likely damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00000866", "action": "run", "region_id": 214, "gt": 4, "pred": 3, "explanation": "The object is a fireplace, which can be a physical obstacle.", "consequence": "Running on the floor near the fireplace could lead to tripping or fire hazards."}
+{"model": "internvl3_8b", "image": "ADE_train_00000866", "action": "sit", "region_id": 62, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000866", "action": "sit", "region_id": 214, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000870", "action": "run", "region_id": 55, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000870", "action": "run", "region_id": 200, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000879", "action": "grasp", "region_id": 73, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000879", "action": "grasp", "region_id": 87, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000879", "action": "grasp", "region_id": 95, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000879", "action": "grasp", "region_id": 248, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000879", "action": "sit", "region_id": 22, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000885", "action": "grasp", "region_id": 255, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000885", "action": "run", "region_id": 25, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000885", "action": "sit", "region_id": 25, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000892", "action": "run", "region_id": 38, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000892", "action": "run", "region_id": 205, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000893", "action": "grasp", "region_id": 151, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000920", "action": "grasp", "region_id": 220, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000920", "action": "grasp", "region_id": 255, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000920", "action": "run", "region_id": 21, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000920", "action": "sit", "region_id": 21, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00000975", "action": "grasp", "region_id": 122, "gt": 5, "pred": 2, "explanation": "The object is a stone structure, not functional for grasping.", "consequence": "Grasping the stone would likely result in injury or damage to the object."}
+{"model": "internvl3_8b", "image": "ADE_train_00000975", "action": "grasp", "region_id": 133, "gt": 5, "pred": 2, "explanation": "The object is a non-functional stone structure.", "consequence": "Grasping it would not be practical or possible."}
+{"model": "internvl3_8b", "image": "ADE_train_00000975", "action": "grasp", "region_id": 144, "gt": 5, "pred": 2, "explanation": "The object is a tombstone, which is non-functional for grasping.", "consequence": "Grasping a tombstone would not serve any practical purpose."}
+{"model": "internvl3_8b", "image": "ADE_train_00000975", "action": "grasp", "region_id": 155, "gt": 5, "pred": 2, "explanation": "The object is a non-functional stone structure.", "consequence": "Grasping it would not be practical or useful."}
+{"model": "internvl3_8b", "image": "ADE_train_00000975", "action": "grasp", "region_id": 166, "gt": 5, "pred": 2, "explanation": "The object is a non-functional stone structure.", "consequence": "Grasping it would not allow interaction or utility."}
+{"model": "internvl3_8b", "image": "ADE_train_00000975", "action": "grasp", "region_id": 177, "gt": 5, "pred": 2, "explanation": "The object is a non-functional stone structure.", "consequence": "Grasping it would not be practical or useful."}
+{"model": "internvl3_8b", "image": "ADE_train_00000975", "action": "grasp", "region_id": 188, "gt": 5, "pred": 2, "explanation": "The object is a non-functional stone structure.", "consequence": "Grasping it would not be practical or useful."}
+{"model": "internvl3_8b", "image": "ADE_train_00000975", "action": "grasp", "region_id": 200, "gt": 5, "pred": 2, "explanation": "The object is a non-functional stone structure.", "consequence": "Grasping it would not allow interaction or utility."}
+{"model": "internvl3_8b", "image": "ADE_train_00000975", "action": "grasp", "region_id": 211, "gt": 5, "pred": 2, "explanation": "The object is a non-functional stone structure.", "consequence": "Grasping it would not be practical or possible."}
+{"model": "internvl3_8b", "image": "ADE_train_00000975", "action": "run", "region_id": 55, "gt": 5, "pred": 3, "explanation": "The gravel path is uneven and could cause tripping.", "consequence": "Running on the gravel path may result in tripping or falling."}
+{"model": "internvl3_8b", "image": "ADE_train_00000975", "action": "sit", "region_id": 55, "gt": 4, "pred": 2, "explanation": "The stone structure is non-functional as it is a ruin.", "consequence": "Sitting on it could cause injury due to instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00000975", "action": "sit", "region_id": 67, "gt": 4, "pred": 2, "explanation": "The stone structure is non-functional as it is a ruin.", "consequence": "Attempting to sit on it could result in injury due to instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00000975", "action": "sit", "region_id": 78, "gt": 4, "pred": 2, "explanation": "The stone steps are part of the ruins and not functional for sitting.", "consequence": "Attempting to sit on them could result in discomfort or damage to the structure."}
+{"model": "internvl3_8b", "image": "ADE_train_00001010", "action": "run", "region_id": 23, "gt": 6, "pred": 3, "explanation": "The concrete barrier is a physical obstacle.", "consequence": "Running on the barrier could result in tripping or falling."}
+{"model": "internvl3_8b", "image": "ADE_train_00001010", "action": "sit", "region_id": 70, "gt": 4, "pred": 2, "explanation": "The object is a construction barrier, not functional for sitting.", "consequence": "Sitting on the barrier could lead to injury or instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00001010", "action": "sit", "region_id": 93, "gt": 4, "pred": 2, "explanation": "The object is a physical barrier and not functional for sitting.", "consequence": "Sitting on the barrier could lead to discomfort or injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001010", "action": "sit", "region_id": 104, "gt": 4, "pred": 2, "explanation": "The concrete barrier is not functional for sitting.", "consequence": "Sitting on the barrier could lead to discomfort or instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00001023", "action": "run", "region_id": 14, "gt": 6, "pred": 3, "explanation": "The road is a physical obstacle.", "consequence": "Running on the road could lead to accidents or injuries."}
+{"model": "internvl3_8b", "image": "ADE_train_00001024", "action": "run", "region_id": 170, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001024", "action": "sit", "region_id": 187, "gt": 2, "pred": 2, "explanation": "The object is a ladder, which is non-functional for sitting.", "consequence": "Sitting on the ladder could lead to instability and potential injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001035", "action": "grasp", "region_id": 85, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001035", "action": "run", "region_id": 85, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001035", "action": "sit", "region_id": 64, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001035", "action": "sit", "region_id": 149, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001044", "action": "run", "region_id": 51, "gt": 3, "pred": 3, "explanation": "The floor is slippery, which could cause a physical obstacle.", "consequence": "Running on the floor might lead to slipping and falling."}
+{"model": "internvl3_8b", "image": "ADE_train_00001044", "action": "sit", "region_id": 51, "gt": 4, "pred": 2, "explanation": "The object is a porthole, which is not designed for sitting.", "consequence": "Attempting to sit on the porthole could damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00001044", "action": "sit", "region_id": 136, "gt": 2, "pred": 2, "explanation": "The object is a porthole, not designed for sitting.", "consequence": "Attempting to sit on it could damage the porthole."}
+{"model": "internvl3_8b", "image": "ADE_train_00001055", "action": "grasp", "region_id": 219, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001055", "action": "grasp", "region_id": 226, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001055", "action": "grasp", "region_id": 233, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001055", "action": "run", "region_id": 36, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001055", "action": "sit", "region_id": 36, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001055", "action": "sit", "region_id": 175, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001057", "action": "run", "region_id": 39, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001068", "action": "run", "region_id": 35, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001068", "action": "sit", "region_id": 35, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001125", "action": "sit", "region_id": 91, "gt": 2, "pred": 2, "explanation": "The object is a glass barrier, which is non-functional for sitting.", "consequence": "Sitting on the glass barrier could result in damage or injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001125", "action": "sit", "region_id": 109, "gt": 2, "pred": 2, "explanation": "The object is a structural framework, not designed for sitting.", "consequence": "Attempting to sit on it could lead to discomfort or injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001154", "action": "run", "region_id": 16, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001154", "action": "run", "region_id": 58, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001154", "action": "sit", "region_id": 58, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001154", "action": "sit", "region_id": 132, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001165", "action": "grasp", "region_id": 236, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001165", "action": "run", "region_id": 19, "gt": 3, "pred": 2, "explanation": "The horse statue is non-functional as it cannot be ridden.", "consequence": "People are using the statue as a seating area, which is not its intended purpose."}
+{"model": "internvl3_8b", "image": "ADE_train_00001165", "action": "sit", "region_id": 19, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001176", "action": "grasp", "region_id": 242, "gt": 6, "pred": 2, "explanation": "The escalator is not functional for grasping.", "consequence": "Grasping the escalator would be ineffective and unsafe."}
+{"model": "internvl3_8b", "image": "ADE_train_00001176", "action": "run", "region_id": 64, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001176", "action": "sit", "region_id": 64, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001176", "action": "sit", "region_id": 191, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001178", "action": "grasp", "region_id": 77, "gt": 4, "pred": 2, "explanation": "The bag is non-functional for grasping due to its shape.", "consequence": "Grasping the bag would not be practical or effective."}
+{"model": "internvl3_8b", "image": "ADE_train_00001178", "action": "sit", "region_id": 38, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001178", "action": "sit", "region_id": 255, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001185", "action": "run", "region_id": 80, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001185", "action": "sit", "region_id": 80, "gt": 4, "pred": 2, "explanation": "The object is a pillar, which is non-functional for sitting.", "consequence": "Sitting on the pillar would be impractical and uncomfortable."}
+{"model": "internvl3_8b", "image": "ADE_train_00001204", "action": "run", "region_id": 106, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001204", "action": "sit", "region_id": 106, "gt": 5, "pred": 2, "explanation": "The object is a counter, not designed for sitting.", "consequence": "Attempting to sit on the counter would be impractical and uncomfortable."}
+{"model": "internvl3_8b", "image": "ADE_train_00001214", "action": "grasp", "region_id": 244, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001214", "action": "grasp", "region_id": 255, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001230", "action": "run", "region_id": 73, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001230", "action": "sit", "region_id": 73, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "grasp", "region_id": 107, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "grasp", "region_id": 121, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "grasp", "region_id": 134, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "grasp", "region_id": 161, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "grasp", "region_id": 174, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "grasp", "region_id": 228, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "grasp", "region_id": 242, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 13, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which could be considered a physical obstacle.", "consequence": "Running on the cobblestone street might be difficult or dangerous due to the uneven surface."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 40, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which could be a physical obstacle.", "consequence": "Running on the cobblestone street might be difficult or dangerous due to uneven surfaces."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 54, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which is a physical obstacle.", "consequence": "It may hinder pedestrian movement and could cause tripping."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 67, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which is a physical obstacle.", "consequence": "Running on the cobblestone street could be difficult and potentially dangerous due to the uneven surface."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 81, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which is uneven and narrow.", "consequence": "Running on this surface could cause the scooter to get stuck or damage the tires."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 94, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which is a physical obstacle.", "consequence": "Running on the cobblestone street could be difficult and potentially damaging to footwear."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 107, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which could be considered a physical obstacle.", "consequence": "It may hinder pedestrian movement or cause tripping hazards."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 121, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which could be considered a physical obstacle.", "consequence": "Running on the cobblestone street might be difficult or dangerous due to the uneven surface."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 134, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which could be a physical obstacle.", "consequence": "It may hinder pedestrian movement or cause tripping."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 148, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which could be considered a physical obstacle.", "consequence": "Running on the cobblestone street might be difficult or dangerous due to the uneven surface."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 161, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which could be a physical obstacle.", "consequence": "It may hinder pedestrian movement or cause tripping hazards."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 174, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which could be a physical obstacle.", "consequence": "It may hinder pedestrian movement or cause tripping hazards."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 188, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which could be considered a physical obstacle.", "consequence": "Running on the cobblestone street might be difficult or dangerous due to the uneven surface."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 201, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which could be considered a physical obstacle.", "consequence": "Running on the cobblestone street might be difficult or dangerous due to the uneven surface."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 228, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which could be considered a physical obstacle.", "consequence": "It may hinder pedestrian movement or cause tripping hazards."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 242, "gt": 3, "pred": 3, "explanation": "The scooter is parked on the cobblestone street, which could be considered a physical obstacle.", "consequence": "Running on the cobblestone street might be difficult or dangerous due to the uneven surface."}
+{"model": "internvl3_8b", "image": "ADE_train_00001252", "action": "run", "region_id": 255, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001293", "action": "run", "region_id": 21, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001302", "action": "run", "region_id": 46, "gt": 3, "pred": 3, "explanation": "Stairs are a physical obstacle.", "consequence": "Running on stairs could lead to injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001328", "action": "run", "region_id": 51, "gt": 4, "pred": 3, "explanation": "The stone steps are uneven and could cause tripping.", "consequence": "Running on the steps may lead to injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001335", "action": "run", "region_id": 51, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001335", "action": "run", "region_id": 61, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001335", "action": "sit", "region_id": 51, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001335", "action": "sit", "region_id": 61, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001335", "action": "sit", "region_id": 122, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001370", "action": "run", "region_id": 128, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001370", "action": "sit", "region_id": 128, "gt": 6, "pred": 2, "explanation": "The roller coaster track is not functional for sitting.", "consequence": "Attempting to sit on the track would result in falling off."}
+{"model": "internvl3_8b", "image": "ADE_train_00001370", "action": "sit", "region_id": 213, "gt": 6, "pred": 2, "explanation": "The roller coaster is not functional for sitting on.", "consequence": "Attempting to sit on the roller coaster could result in damage or injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001372", "action": "run", "region_id": 232, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001372", "action": "run", "region_id": 255, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001372", "action": "sit", "region_id": 116, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001483", "action": "run", "region_id": 255, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001483", "action": "sit", "region_id": 255, "gt": 6, "pred": 2, "explanation": "The object is a building, which is non-functional for sitting.", "consequence": "Sitting on the building is not possible and would be impractical."}
+{"model": "internvl3_8b", "image": "ADE_train_00001513", "action": "grasp", "region_id": 187, "gt": 2, "pred": 2, "explanation": "The object is a non-functional ruin.", "consequence": "Grasping it would not allow interaction or support."}
+{"model": "internvl3_8b", "image": "ADE_train_00001513", "action": "grasp", "region_id": 255, "gt": 2, "pred": 2, "explanation": "The object is a ruin and not functional.", "consequence": "Grasping it would not be practical or safe."}
+{"model": "internvl3_8b", "image": "ADE_train_00001513", "action": "run", "region_id": 136, "gt": 6, "pred": 2, "explanation": "The structure is non-functional and unsafe for running.", "consequence": "Running on the structure could result in injury due to its deteriorated state."}
+{"model": "internvl3_8b", "image": "ADE_train_00001513", "action": "run", "region_id": 170, "gt": 6, "pred": 3, "explanation": "The structure is a historical ruin, which could be physically unstable.", "consequence": "Running on it might cause collapse and injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001526", "action": "sit", "region_id": 59, "gt": 4, "pred": 2, "explanation": "The bench is not functional for sitting due to its design.", "consequence": "Users may find it uncomfortable or unsafe to sit on the bench."}
+{"model": "internvl3_8b", "image": "ADE_train_00001543", "action": "run", "region_id": 36, "gt": 6, "pred": 3, "explanation": "The object is a wooden structure used for moving rocks, not a running surface.", "consequence": "Attempting to run on it could cause it to collapse, leading to injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001543", "action": "run", "region_id": 73, "gt": 6, "pred": 3, "explanation": "The wooden structure is a physical obstacle in the path.", "consequence": "It hinders movement and requires careful navigation."}
+{"model": "internvl3_8b", "image": "ADE_train_00001543", "action": "sit", "region_id": 36, "gt": 6, "pred": 2, "explanation": "The object is a wooden structure used for manual labor, not designed for sitting.", "consequence": "Attempting to sit on it could lead to instability and potential injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001543", "action": "sit", "region_id": 73, "gt": 6, "pred": 2, "explanation": "The object is not designed for sitting.", "consequence": "It could cause discomfort or injury if used as a seat."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "run", "region_id": 123, "gt": 6, "pred": 3, "explanation": "The area is a deep excavation, posing a physical obstacle.", "consequence": "Running on the site could result in tripping or falling into the excavation."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "run", "region_id": 132, "gt": 6, "pred": 3, "explanation": "The area is a deep excavation, posing a physical obstacle.", "consequence": "Running on the uneven, unstable ground could result in tripping or falling."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "run", "region_id": 142, "gt": 6, "pred": 3, "explanation": "The area is a deep excavation, posing a physical obstacle.", "consequence": "Running on the uneven, deep excavation could result in tripping or falling."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "run", "region_id": 151, "gt": 6, "pred": 3, "explanation": "The excavated area is a physical obstacle.", "consequence": "Running on the site could lead to tripping or falling into the trenches."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "run", "region_id": 161, "gt": 6, "pred": 3, "explanation": "The log is a physical obstacle on the ground.", "consequence": "Running on it could cause tripping or injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "run", "region_id": 179, "gt": 6, "pred": 3, "explanation": "The area is a deep excavation, posing a physical obstacle.", "consequence": "Running on the site could result in tripping or falling into the excavation."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "run", "region_id": 189, "gt": 6, "pred": 3, "explanation": "The area is a deep excavation, posing a physical obstacle.", "consequence": "Running on the site could result in tripping or falling into the excavation."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "run", "region_id": 208, "gt": 6, "pred": 3, "explanation": "The area is a construction site with deep trenches, posing a physical obstacle.", "consequence": "Running on the site could result in tripping or falling into the trenches."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "sit", "region_id": 123, "gt": 6, "pred": 3, "explanation": "The object is a hole in the ground, which is a physical obstacle.", "consequence": "Sitting on the edge of the hole could lead to falling in and getting injured."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "sit", "region_id": 132, "gt": 6, "pred": 3, "explanation": "The area is a deep excavation, posing a physical obstacle.", "consequence": "Sitting could lead to falling into the pit, causing injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "sit", "region_id": 142, "gt": 6, "pred": 3, "explanation": "The area is a deep excavation, posing a physical obstacle.", "consequence": "Sitting could lead to falling into the pit, causing injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "sit", "region_id": 151, "gt": 6, "pred": 3, "explanation": "The object is a deep excavation, which is a physical obstacle.", "consequence": "Sitting on the excavation could lead to injury from falling or tripping."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "sit", "region_id": 161, "gt": 6, "pred": 3, "explanation": "The object is a physical obstacle in the excavation site.", "consequence": "It could cause injury if stepped on or tripped over."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "sit", "region_id": 170, "gt": 6, "pred": 2, "explanation": "The object is a physical obstacle.", "consequence": "Sitting on it could cause injury or damage."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "sit", "region_id": 179, "gt": 6, "pred": 3, "explanation": "The area is a deep excavation, posing a physical obstacle.", "consequence": "Sitting could lead to falling into the excavation, causing injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001545", "action": "sit", "region_id": 189, "gt": 6, "pred": 3, "explanation": "The area is a deep excavation, posing a physical obstacle.", "consequence": "Sitting on the edge could lead to falling into the pit."}
+{"model": "internvl3_8b", "image": "ADE_train_00001585", "action": "sit", "region_id": 204, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001585", "action": "sit", "region_id": 217, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001585", "action": "sit", "region_id": 230, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001585", "action": "sit", "region_id": 242, "gt": 5, "pred": 2, "explanation": "The object is a hockey rink, not designed for sitting.", "consequence": "Attempting to sit on the ice could result in discomfort or injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001585", "action": "sit", "region_id": 255, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001638", "action": "run", "region_id": 32, "gt": 4, "pred": 3, "explanation": "The wooden floor is a physical obstacle.", "consequence": "Running on the wooden floor may cause tripping or damage to the floor."}
+{"model": "internvl3_8b", "image": "ADE_train_00001638", "action": "sit", "region_id": 32, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001642", "action": "run", "region_id": 55, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001642", "action": "sit", "region_id": 55, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001642", "action": "sit", "region_id": 219, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001653", "action": "run", "region_id": 45, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001653", "action": "sit", "region_id": 45, "gt": 4, "pred": 2, "explanation": "The object is a painting, which is non-functional for sitting.", "consequence": "Sitting on a painting would damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00001654", "action": "run", "region_id": 46, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001654", "action": "run", "region_id": 58, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001654", "action": "sit", "region_id": 46, "gt": 4, "pred": 2, "explanation": "The object is a sculpture, not functional for sitting.", "consequence": "Attempting to sit on it would be impractical and inappropriate."}
+{"model": "internvl3_8b", "image": "ADE_train_00001654", "action": "sit", "region_id": 58, "gt": 4, "pred": 2, "explanation": "The object is a firearm, which is not functional for sitting.", "consequence": "Attempting to sit on the firearm would be impractical and unsafe."}
+{"model": "internvl3_8b", "image": "ADE_train_00001660", "action": "run", "region_id": 78, "gt": 5, "pred": 3, "explanation": "The wheelchair is positioned on the floor, which is a physical obstacle.", "consequence": "It may hinder movement or accessibility within the gallery space."}
+{"model": "internvl3_8b", "image": "ADE_train_00001660", "action": "sit", "region_id": 78, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001695", "action": "grasp", "region_id": 128, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001695", "action": "run", "region_id": 64, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001695", "action": "sit", "region_id": 64, "gt": 4, "pred": 2, "explanation": "The green chair is not functional for sitting as it lacks a backrest.", "consequence": "Sitting on it would be uncomfortable and impractical."}
+{"model": "internvl3_8b", "image": "ADE_train_00001717", "action": "run", "region_id": 33, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001717", "action": "sit", "region_id": 33, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001717", "action": "sit", "region_id": 200, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001719", "action": "grasp", "region_id": 255, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001719", "action": "run", "region_id": 64, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001719", "action": "sit", "region_id": 64, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001729", "action": "run", "region_id": 51, "gt": 6, "pred": 3, "explanation": "The object is a physical obstacle on the floor.", "consequence": "Running on it could cause tripping or injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00001729", "action": "sit", "region_id": 51, "gt": 6, "pred": 2, "explanation": "The object is a sculpture and not functional for sitting.", "consequence": "Attempting to sit on the sculpture would likely damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00001736", "action": "grasp", "region_id": 81, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001736", "action": "run", "region_id": 16, "gt": 6, "pred": 1, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001736", "action": "sit", "region_id": 16, "gt": 5, "pred": 1, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001780", "action": "run", "region_id": 30, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001780", "action": "run", "region_id": 135, "gt": 5, "pred": 3, "explanation": "The easel obstructs the pathway.", "consequence": "Running on the rug could trip someone."}
+{"model": "internvl3_8b", "image": "ADE_train_00001795", "action": "run", "region_id": 36, "gt": 3, "pred": 3, "explanation": "The area is cluttered with objects, posing a physical obstacle.", "consequence": "Running could lead to tripping or knocking over items, causing injury or damage."}
+{"model": "internvl3_8b", "image": "ADE_train_00001795", "action": "sit", "region_id": 36, "gt": 3, "pred": 2, "explanation": "The chair is obstructed by debris, making it non-functional.", "consequence": "Users cannot sit on the chair due to the clutter."}
+{"model": "internvl3_8b", "image": "ADE_train_00001822", "action": "run", "region_id": 59, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001822", "action": "sit", "region_id": 59, "gt": 4, "pred": 2, "explanation": "The couch is not functional for sitting due to its disheveled state.", "consequence": "Sitting on it may be uncomfortable or unsanitary."}
+{"model": "internvl3_8b", "image": "ADE_train_00001825", "action": "run", "region_id": 43, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001825", "action": "sit", "region_id": 43, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001844", "action": "run", "region_id": 26, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001844", "action": "sit", "region_id": 26, "gt": 5, "pred": 1, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001873", "action": "run", "region_id": 55, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001873", "action": "sit", "region_id": 55, "gt": 4, "pred": 2, "explanation": "Bench is not functional for sitting due to lack of backrest.", "consequence": "Users may find it uncomfortable or unsafe to sit on the bench."}
+{"model": "internvl3_8b", "image": "ADE_train_00001893", "action": "run", "region_id": 68, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001893", "action": "run", "region_id": 255, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001893", "action": "sit", "region_id": 68, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001893", "action": "sit", "region_id": 119, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001893", "action": "sit", "region_id": 255, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001897", "action": "grasp", "region_id": 217, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001897", "action": "grasp", "region_id": 230, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001897", "action": "run", "region_id": 38, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001908", "action": "run", "region_id": 109, "gt": 5, "pred": 3, "explanation": "The wooden floor appears worn and uneven, which could be a physical obstacle.", "consequence": "Running on this surface might cause tripping or slipping."}
+{"model": "internvl3_8b", "image": "ADE_train_00001929", "action": "run", "region_id": 40, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001929", "action": "sit", "region_id": 40, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001955", "action": "run", "region_id": 78, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001962", "action": "run", "region_id": 54, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001962", "action": "run", "region_id": 215, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001980", "action": "run", "region_id": 18, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001980", "action": "sit", "region_id": 18, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001989", "action": "grasp", "region_id": 102, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001989", "action": "run", "region_id": 68, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001989", "action": "sit", "region_id": 68, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00001989", "action": "sit", "region_id": 187, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002019", "action": "grasp", "region_id": 32, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002019", "action": "run", "region_id": 32, "gt": 6, "pred": 3, "explanation": "The car is on a testing platform, which is a physical obstacle.", "consequence": "This setup is likely used for vehicle testing, which is a controlled environment."}
+{"model": "internvl3_8b", "image": "ADE_train_00002029", "action": "run", "region_id": 35, "gt": 6, "pred": 3, "explanation": "The car is elevated on a lift, making it physically impossible to run on.", "consequence": "Attempting to run on the car could result in injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00002029", "action": "sit", "region_id": 35, "gt": 6, "pred": 3, "explanation": "The car is elevated on a lift, making it a physical obstacle.", "consequence": "This could hinder movement or access to the area beneath the car."}
+{"model": "internvl3_8b", "image": "ADE_train_00002062", "action": "grasp", "region_id": 164, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002062", "action": "run", "region_id": 46, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002062", "action": "run", "region_id": 55, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002062", "action": "sit", "region_id": 46, "gt": 4, "pred": 2, "explanation": "The car is not functional for sitting on as it is a vehicle.", "consequence": "Attempting to sit on the car could damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00002062", "action": "sit", "region_id": 55, "gt": 4, "pred": 2, "explanation": "The car is not functional for sitting on as it is a vehicle.", "consequence": "Attempting to sit on the car could damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00002142", "action": "grasp", "region_id": 81, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002142", "action": "grasp", "region_id": 162, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002142", "action": "grasp", "region_id": 174, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002142", "action": "run", "region_id": 58, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002142", "action": "sit", "region_id": 58, "gt": 5, "pred": 1, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002173", "action": "grasp", "region_id": 191, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002173", "action": "run", "region_id": 16, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002173", "action": "sit", "region_id": 16, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002176", "action": "grasp", "region_id": 111, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002176", "action": "grasp", "region_id": 155, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002176", "action": "grasp", "region_id": 166, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002176", "action": "grasp", "region_id": 177, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002176", "action": "grasp", "region_id": 188, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002176", "action": "grasp", "region_id": 200, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002176", "action": "grasp", "region_id": 233, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002176", "action": "grasp", "region_id": 244, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002176", "action": "grasp", "region_id": 255, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002176", "action": "sit", "region_id": 55, "gt": 5, "pred": 2, "explanation": "The object is a display rack meant for standing, not sitting.", "consequence": "Attempting to sit on the display rack could damage it or cause instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00002182", "action": "sit", "region_id": 9, "gt": 5, "pred": 2, "explanation": "The object is a baked good, not functional for sitting.", "consequence": "Attempting to sit on it would be impractical and uncomfortable."}
+{"model": "internvl3_8b", "image": "ADE_train_00002232", "action": "run", "region_id": 48, "gt": 4, "pred": 3, "explanation": "The railing is a physical obstacle.", "consequence": "Running on the balcony could lead to tripping or falling."}
+{"model": "internvl3_8b", "image": "ADE_train_00002232", "action": "sit", "region_id": 48, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002232", "action": "sit", "region_id": 80, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002232", "action": "sit", "region_id": 96, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002235", "action": "run", "region_id": 106, "gt": 6, "pred": 3, "explanation": "The table is positioned on the balcony floor, posing a physical obstacle.", "consequence": "Running on the balcony could result in tripping over the table."}
+{"model": "internvl3_8b", "image": "ADE_train_00002237", "action": "sit", "region_id": 43, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002240", "action": "grasp", "region_id": 134, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002240", "action": "run", "region_id": 61, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002240", "action": "sit", "region_id": 61, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002288", "action": "grasp", "region_id": 108, "gt": 4, "pred": 2, "explanation": "The object is a water bottle, which is non-functional for grasping.", "consequence": "Grasping the bottle would not allow for drinking, as it lacks a handle or spout."}
+{"model": "internvl3_8b", "image": "ADE_train_00002288", "action": "run", "region_id": 32, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002288", "action": "sit", "region_id": 32, "gt": 4, "pred": 2, "explanation": "The chairs are not functional for sitting due to their placement and lack of support.", "consequence": "Sitting on them may be uncomfortable or unsafe."}
+{"model": "internvl3_8b", "image": "ADE_train_00002308", "action": "run", "region_id": 137, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002308", "action": "sit", "region_id": 137, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002344", "action": "run", "region_id": 170, "gt": 4, "pred": 3, "explanation": "The object is a bathtub, which is a physical obstacle.", "consequence": "Running on the bathtub would be impractical and potentially damaging."}
+{"model": "internvl3_8b", "image": "ADE_train_00002344", "action": "run", "region_id": 213, "gt": 4, "pred": 3, "explanation": "The object is a pool, which can be a physical obstacle.", "consequence": "Running on the pool's edge could lead to slipping or injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00002344", "action": "sit", "region_id": 170, "gt": 6, "pred": 2, "explanation": "The object is a bathtub, which is non-functional for sitting.", "consequence": "Attempting to sit on the bathtub would be uncomfortable and impractical."}
+{"model": "internvl3_8b", "image": "ADE_train_00002344", "action": "sit", "region_id": 213, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002358", "action": "grasp", "region_id": 113, "gt": 3, "pred": 2, "explanation": "The object is a tree, which is non-functional for grasping.", "consequence": "Grasping the tree would not be practical or useful."}
+{"model": "internvl3_8b", "image": "ADE_train_00002378", "action": "grasp", "region_id": 56, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002378", "action": "grasp", "region_id": 62, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002378", "action": "grasp", "region_id": 143, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002378", "action": "grasp", "region_id": 149, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002378", "action": "grasp", "region_id": 174, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002378", "action": "grasp", "region_id": 199, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002378", "action": "grasp", "region_id": 205, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002378", "action": "grasp", "region_id": 236, "gt": 4, "pred": 2, "explanation": "The object is a drum, which is non-functional for grasping.", "consequence": "Grasping the drum would not allow for playing or interacting with it as intended."}
+{"model": "internvl3_8b", "image": "ADE_train_00002378", "action": "grasp", "region_id": 243, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002378", "action": "grasp", "region_id": 249, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002378", "action": "run", "region_id": 25, "gt": 4, "pred": 3, "explanation": "The stool is positioned on the floor, posing a physical obstacle.", "consequence": "It could cause tripping hazards for people moving around."}
+{"model": "internvl3_8b", "image": "ADE_train_00002378", "action": "sit", "region_id": 25, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002379", "action": "grasp", "region_id": 170, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002379", "action": "run", "region_id": 51, "gt": 4, "pred": 3, "explanation": "Bar stools are placed along the bar counter, creating a physical barrier.", "consequence": "Running on the stools could lead to tripping and falling."}
+{"model": "internvl3_8b", "image": "ADE_train_00002387", "action": "grasp", "region_id": 146, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002387", "action": "grasp", "region_id": 255, "gt": 4, "pred": 2, "explanation": "The chairs are not functional for grasping due to their design.", "consequence": "Grasping the chairs would not provide support or stability."}
+{"model": "internvl3_8b", "image": "ADE_train_00002387", "action": "run", "region_id": 24, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002387", "action": "sit", "region_id": 24, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002414", "action": "run", "region_id": 68, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002414", "action": "sit", "region_id": 68, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002425", "action": "run", "region_id": 43, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002425", "action": "sit", "region_id": 43, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002428", "action": "grasp", "region_id": 128, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002428", "action": "grasp", "region_id": 139, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002428", "action": "run", "region_id": 46, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002428", "action": "sit", "region_id": 46, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002433", "action": "grasp", "region_id": 116, "gt": 4, "pred": 2, "explanation": "The barn is non-functional for grasping as it lacks functional handles or grips.", "consequence": "Grasping the barn would not allow for any practical use or interaction."}
+{"model": "internvl3_8b", "image": "ADE_train_00002479", "action": "run", "region_id": 64, "gt": 3, "pred": 3, "explanation": "The wooden planks on the floor create a physical obstacle.", "consequence": "Running on them could cause tripping or injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00002479", "action": "sit", "region_id": 64, "gt": 5, "pred": 2, "explanation": "The object is a box, not designed for sitting.", "consequence": "Attempting to sit on the box could damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00002484", "action": "run", "region_id": 53, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002484", "action": "run", "region_id": 220, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002484", "action": "sit", "region_id": 53, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002484", "action": "sit", "region_id": 220, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002487", "action": "run", "region_id": 80, "gt": 3, "pred": 3, "explanation": "The cardboard box is on the floor, posing a tripping hazard.", "consequence": "It could cause someone to trip and fall, leading to injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00002487", "action": "sit", "region_id": 80, "gt": 4, "pred": 2, "explanation": "The couch is not functional for sitting due to its disheveled state.", "consequence": "It may be uncomfortable or unsafe to sit on."}
+{"model": "internvl3_8b", "image": "ADE_train_00002549", "action": "run", "region_id": 55, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002549", "action": "sit", "region_id": 55, "gt": 4, "pred": 2, "explanation": "The toilet is not functional for sitting on due to its design.", "consequence": "Attempting to sit on the toilet could lead to discomfort or instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00002567", "action": "grasp", "region_id": 255, "gt": 4, "pred": 2, "explanation": "The robe is non-functional for grasping as it is designed to be worn.", "consequence": "Attempting to grasp the robe would not allow it to be worn properly."}
+{"model": "internvl3_8b", "image": "ADE_train_00002567", "action": "run", "region_id": 53, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002567", "action": "sit", "region_id": 53, "gt": 4, "pred": 2, "explanation": "The robe is non-functional for sitting.", "consequence": "Attempting to sit on the robe would be uncomfortable and impractical."}
+{"model": "internvl3_8b", "image": "ADE_train_00002590", "action": "run", "region_id": 48, "gt": 6, "pred": 3, "explanation": "The bathtub is a physical obstacle.", "consequence": "Running on the bathtub could result in tripping or injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00002590", "action": "run", "region_id": 255, "gt": 6, "pred": 3, "explanation": "The bathtub is a physical obstacle that could impede movement.", "consequence": "Running on the bathtub would likely result in tripping or falling."}
+{"model": "internvl3_8b", "image": "ADE_train_00002628", "action": "grasp", "region_id": 166, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002628", "action": "grasp", "region_id": 179, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002628", "action": "grasp", "region_id": 230, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002628", "action": "grasp", "region_id": 255, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002628", "action": "sit", "region_id": 64, "gt": 4, "pred": 2, "explanation": "The object is a shower curtain, which is not functional for sitting.", "consequence": "Attempting to sit on the shower curtain would result in it being damaged or displaced."}
+{"model": "internvl3_8b", "image": "ADE_train_00002683", "action": "run", "region_id": 73, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002683", "action": "run", "region_id": 219, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002683", "action": "run", "region_id": 237, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002683", "action": "sit", "region_id": 73, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002683", "action": "sit", "region_id": 219, "gt": 4, "pred": 2, "explanation": "The toilet seat is not functional for sitting.", "consequence": "Attempting to sit on the toilet seat may cause discomfort or instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00002683", "action": "sit", "region_id": 237, "gt": 4, "pred": 2, "explanation": "The object is a toilet, which is non-functional for sitting on.", "consequence": "Attempting to sit on the toilet could damage it or be uncomfortable."}
+{"model": "internvl3_8b", "image": "ADE_train_00002726", "action": "grasp", "region_id": 153, "gt": 4, "pred": 2, "explanation": "The statue is non-functional as it cannot be grasped.", "consequence": "Grasping the statue would likely result in damage to the object."}
+{"model": "internvl3_8b", "image": "ADE_train_00002726", "action": "grasp", "region_id": 170, "gt": 4, "pred": 2, "explanation": "The statue is non-functional as it cannot be grasped.", "consequence": "Attempting to grasp the statue would be futile and unproductive."}
+{"model": "internvl3_8b", "image": "ADE_train_00002726", "action": "grasp", "region_id": 221, "gt": 4, "pred": 2, "explanation": "The stone statue is non-functional as it cannot be grasped.", "consequence": "Grasping the statue would likely result in damage to the statue."}
+{"model": "internvl3_8b", "image": "ADE_train_00002726", "action": "grasp", "region_id": 255, "gt": 4, "pred": 2, "explanation": "The statue is non-functional as it cannot be grasped for practical use.", "consequence": "Attempting to grasp the statue would be futile and not useful."}
+{"model": "internvl3_8b", "image": "ADE_train_00002726", "action": "run", "region_id": 85, "gt": 5, "pred": 3, "explanation": "The showerhead is mounted on a rough stone wall, which could be slippery.", "consequence": "Running on the stone floor might lead to slipping and falling."}
+{"model": "internvl3_8b", "image": "ADE_train_00002726", "action": "sit", "region_id": 85, "gt": 5, "pred": 2, "explanation": "The bathtub is not functional for sitting due to its design.", "consequence": "Sitting in the bathtub could lead to discomfort or instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00002726", "action": "sit", "region_id": 187, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002737", "action": "run", "region_id": 26, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002737", "action": "run", "region_id": 158, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002737", "action": "run", "region_id": 163, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002737", "action": "sit", "region_id": 26, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002737", "action": "sit", "region_id": 163, "gt": 4, "pred": 2, "explanation": "The rug is not functional for sitting.", "consequence": "Sitting on the rug may cause discomfort or damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00002745", "action": "grasp", "region_id": 128, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002745", "action": "grasp", "region_id": 235, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002745", "action": "run", "region_id": 49, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002745", "action": "run", "region_id": 157, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002745", "action": "sit", "region_id": 49, "gt": 4, "pred": 2, "explanation": "The bathtub is not designed for sitting.", "consequence": "Sitting on the bathtub could lead to instability and potential injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00002745", "action": "sit", "region_id": 157, "gt": 4, "pred": 2, "explanation": "The mat is not functional for sitting as it is designed for bathroom use.", "consequence": "Using the mat for sitting could lead to discomfort or instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00002749", "action": "run", "region_id": 51, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002749", "action": "sit", "region_id": 51, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002749", "action": "sit", "region_id": 85, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002788", "action": "grasp", "region_id": 159, "gt": 4, "pred": 2, "explanation": "The vase is not functional for grasping as it is purely decorative.", "consequence": "Grasping the vase would likely result in damage to the flowers or vase."}
+{"model": "internvl3_8b", "image": "ADE_train_00002788", "action": "grasp", "region_id": 255, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002788", "action": "run", "region_id": 53, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002797", "action": "run", "region_id": 38, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002804", "action": "run", "region_id": 59, "gt": 6, "pred": 3, "explanation": "The bathroom floor is slippery.", "consequence": "Running on the floor could lead to slipping and falling."}
+{"model": "internvl3_8b", "image": "ADE_train_00002804", "action": "run", "region_id": 196, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002804", "action": "run", "region_id": 216, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002804", "action": "sit", "region_id": 59, "gt": 4, "pred": 2, "explanation": "The toilet is not designed for sitting on.", "consequence": "Using the toilet seat as a seat could damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00002804", "action": "sit", "region_id": 177, "gt": 4, "pred": 2, "explanation": "The toilet is not functional for sitting due to its design.", "consequence": "Attempting to sit on the toilet may cause discomfort or instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00002804", "action": "sit", "region_id": 196, "gt": 4, "pred": 2, "explanation": "The object is a toilet, which is non-functional for sitting on.", "consequence": "Attempting to sit on the toilet could damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00002804", "action": "sit", "region_id": 216, "gt": 4, "pred": 2, "explanation": "The object is a toilet, which is non-functional for sitting on.", "consequence": "Attempting to sit on the toilet lid could damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00002825", "action": "grasp", "region_id": 143, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002825", "action": "run", "region_id": 48, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002849", "action": "run", "region_id": 85, "gt": 5, "pred": 3, "explanation": "The wicker box is in the path, which could be a physical obstacle.", "consequence": "Running on it might trip someone."}
+{"model": "internvl3_8b", "image": "ADE_train_00002849", "action": "sit", "region_id": 85, "gt": 4, "pred": 2, "explanation": "The wicker box is not functional for sitting.", "consequence": "Sitting on it may cause discomfort or damage."}
+{"model": "internvl3_8b", "image": "ADE_train_00002849", "action": "sit", "region_id": 191, "gt": 4, "pred": 2, "explanation": "The wicker box is not functional for sitting.", "consequence": "Sitting on the wicker box may be uncomfortable or impractical."}
+{"model": "internvl3_8b", "image": "ADE_train_00002893", "action": "grasp", "region_id": 165, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002893", "action": "run", "region_id": 45, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002893", "action": "run", "region_id": 240, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002893", "action": "run", "region_id": 255, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002893", "action": "sit", "region_id": 45, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002893", "action": "sit", "region_id": 240, "gt": 4, "pred": 2, "explanation": "The rug is not functional for sitting.", "consequence": "It is intended for standing or walking."}
+{"model": "internvl3_8b", "image": "ADE_train_00002893", "action": "sit", "region_id": 255, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002901", "action": "run", "region_id": 38, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002903", "action": "run", "region_id": 43, "gt": 6, "pred": 2, "explanation": "The bidet is not functional for running on.", "consequence": "Attempting to run on the bidet would likely damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00002903", "action": "run", "region_id": 198, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002903", "action": "sit", "region_id": 43, "gt": 4, "pred": 2, "explanation": "The bidet is not functional for sitting.", "consequence": "Attempting to sit on the bidet would be uncomfortable and impractical."}
+{"model": "internvl3_8b", "image": "ADE_train_00002903", "action": "sit", "region_id": 198, "gt": 4, "pred": 2, "explanation": "The toilet seat is not functional for sitting.", "consequence": "It is designed for standing or squatting."}
+{"model": "internvl3_8b", "image": "ADE_train_00002907", "action": "run", "region_id": 40, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002907", "action": "sit", "region_id": 40, "gt": 4, "pred": 4, "explanation": "The toilet is designed for sitting.", "consequence": "Sitting on the toilet is a common and appropriate action."}
+{"model": "internvl3_8b", "image": "ADE_train_00002931", "action": "grasp", "region_id": 177, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002931", "action": "grasp", "region_id": 196, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002931", "action": "grasp", "region_id": 216, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002931", "action": "run", "region_id": 78, "gt": 3, "pred": 3, "explanation": "The bathtub is a physical obstacle.", "consequence": "Running on the bathtub would be impractical and hinder movement."}
+{"model": "internvl3_8b", "image": "ADE_train_00002931", "action": "sit", "region_id": 78, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002950", "action": "run", "region_id": 77, "gt": 3, "pred": 3, "explanation": "The shower curtain is a physical obstacle that could impede running.", "consequence": "Running on the tiled floor with a shower curtain nearby could cause tripping or slipping."}
+{"model": "internvl3_8b", "image": "ADE_train_00002950", "action": "sit", "region_id": 77, "gt": 4, "pred": 2, "explanation": "The toilet is not designed for sitting on in a non-functional manner.", "consequence": "Attempting to sit on the toilet in an unconventional way could lead to discomfort or instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00002964", "action": "run", "region_id": 43, "gt": 2, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002964", "action": "sit", "region_id": 43, "gt": 4, "pred": 2, "explanation": "The bathtub is not designed for sitting.", "consequence": "Attempting to sit on the bathtub could lead to discomfort or instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00002972", "action": "grasp", "region_id": 164, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002972", "action": "run", "region_id": 55, "gt": 6, "pred": 3, "explanation": "The toilet is positioned on the bathroom floor, which is a physical obstacle.", "consequence": "Running on the bathroom floor could lead to tripping or slipping."}
+{"model": "internvl3_8b", "image": "ADE_train_00002983", "action": "run", "region_id": 85, "gt": 6, "pred": 3, "explanation": "The checkered floor tiles are slippery.", "consequence": "Running on the tiles could cause slipping and falling."}
+{"model": "internvl3_8b", "image": "ADE_train_00002983", "action": "sit", "region_id": 85, "gt": 4, "pred": 2, "explanation": "The toilet is not designed for sitting on.", "consequence": "Using the toilet seat improperly could lead to discomfort or damage."}
+{"model": "internvl3_8b", "image": "ADE_train_00002996", "action": "grasp", "region_id": 85, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00002996", "action": "run", "region_id": 34, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003007", "action": "run", "region_id": 49, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003007", "action": "sit", "region_id": 49, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003007", "action": "sit", "region_id": 158, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003032", "action": "sit", "region_id": 64, "gt": 6, "pred": 2, "explanation": "The target object is a mat, which is not designed for sitting.", "consequence": "Sitting on the mat may cause discomfort or damage to the surface."}
+{"model": "internvl3_8b", "image": "ADE_train_00003032", "action": "sit", "region_id": 223, "gt": 6, "pred": 2, "explanation": "The target object is a mat, which is not designed for sitting.", "consequence": "Sitting on the mat may cause discomfort or damage it."}
+{"model": "internvl3_8b", "image": "ADE_train_00003032", "action": "sit", "region_id": 255, "gt": 6, "pred": 2, "explanation": "The target object is a mat, which is non-functional for sitting.", "consequence": "Sitting on the mat may cause discomfort or instability."}
+{"model": "internvl3_8b", "image": "ADE_train_00003033", "action": "grasp", "region_id": 198, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003033", "action": "grasp", "region_id": 227, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003033", "action": "run", "region_id": 113, "gt": 6, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003033", "action": "sit", "region_id": 113, "gt": 6, "pred": 2, "explanation": "The target object is a green platform designed for standing, not sitting.", "consequence": "Attempting to sit on the platform could cause instability and potential injury."}
+{"model": "internvl3_8b", "image": "ADE_train_00003042", "action": "grasp", "region_id": 225, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003064", "action": "run", "region_id": 49, "gt": 3, "pred": 3, "explanation": "The narrow aisle with tables and chairs creates a physical barrier.", "consequence": "Running on the aisle could lead to tripping or collision with objects."}
+{"model": "internvl3_8b", "image": "ADE_train_00003064", "action": "sit", "region_id": 49, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003115", "action": "grasp", "region_id": 128, "gt": 2, "pred": 2, "explanation": "Rocks on the beach are non-functional for grasping.", "consequence": "Grasping rocks would be ineffective and impractical."}
+{"model": "internvl3_8b", "image": "ADE_train_00003115", "action": "grasp", "region_id": 159, "gt": 2, "pred": 2, "explanation": "The object is a rock, which is non-functional for grasping.", "consequence": "Grasping the rock would be ineffective and impractical."}
+{"model": "internvl3_8b", "image": "ADE_train_00003115", "action": "sit", "region_id": 191, "gt": 6, "pred": 2, "explanation": "The object is a log on the beach, which is not functional for sitting.", "consequence": "Sitting on the log may be uncomfortable or unstable."}
+{"model": "internvl3_8b", "image": "ADE_train_00003148", "action": "grasp", "region_id": 200, "gt": 6, "pred": 2, "explanation": "The palm tree is not functional for grasping.", "consequence": "Grasping the palm tree would not serve any practical purpose."}
+{"model": "internvl3_8b", "image": "ADE_train_00003165", "action": "run", "region_id": 51, "gt": 3, "pred": 3, "explanation": "The tiled floor is a physical obstacle.", "consequence": "Running on the tiled floor may cause tripping or slipping."}
+{"model": "internvl3_8b", "image": "ADE_train_00003165", "action": "sit", "region_id": 51, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003188", "action": "run", "region_id": 57, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003188", "action": "sit", "region_id": 57, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003189", "action": "run", "region_id": 77, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003189", "action": "sit", "region_id": 77, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003193", "action": "grasp", "region_id": 188, "gt": 4, "pred": 2, "explanation": "The object is a hairbrush, which is non-functional for grasping.", "consequence": "Grasping the hairbrush would not allow for effective use as it is designed for brushing hair."}
+{"model": "internvl3_8b", "image": "ADE_train_00003193", "action": "run", "region_id": 44, "gt": 3, "pred": 3, "explanation": "Hair dryer cables are on the floor, posing a tripping hazard.", "consequence": "A person could trip over the cables while running."}
+{"model": "internvl3_8b", "image": "ADE_train_00003193", "action": "sit", "region_id": 44, "gt": 4, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003200", "action": "run", "region_id": 59, "gt": 5, "pred": 3, "explanation": "The bed is elevated, making it difficult to run on.", "consequence": "Running on the bed could result in tripping or falling."}
+{"model": "internvl3_8b", "image": "ADE_train_00003200", "action": "sit", "region_id": 59, "gt": 5, "pred": 0, "explanation": "", "consequence": ""}
+{"model": "internvl3_8b", "image": "ADE_train_00003200", "action": "sit", "region_id": 216, "gt": 3, "pred": 0, "explanation": "", "consequence": ""}
