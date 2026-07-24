@@ -159,6 +159,7 @@ What actions an object supports (its \emph{affordances}) is central to interacti
 We evaluate frontier Vision-Language Models (VLMs) on \emph{typed} affordance reasoning: instead of a binary can/cannot judgment, an existing 7-way affordance taxonomy that names \emph{why} an action is or is not appropriate, requiring a grounded explanation and consequence for each exception.
 Using a segment-then-query pipeline, we evaluate four frontier VLMs and a chain-of-thought reasoning model across \numactions{} actions, scoring against an existing affordance dataset and reporting inter-model agreement as a ground-truth-free signal.
 Agreement is far higher on \emph{whether} an action is possible than on \emph{why} it is not: typed attribution, not the binary judgment, is where today's VLMs diverge, and explicit chain-of-thought helps but is not necessary.
+A same-weights ablation on an open reasoning pair reproduces this asymmetry without the confound of model identity, and shows that the reasoning trace significantly improves detection while leaving typed attribution statistically unchanged, reallocating typed predictions across constraint axes instead of sharpening them.
 We further audit what this agreement is worth.
 Chance-corrected agreement is only slight to fair (Fleiss $\kappa$ 0.14--0.25), much of the disagreement traces to model-specific label priors rather than scene-specific dissent, and a majority vote of the four models beats no single model against ground truth, decisively losing to the best model on typed exceptions.
 Consensus therefore rewards typicality rather than correctness in this setting.
@@ -338,9 +339,9 @@ ADE annotates three actions that map to our set as \texttt{sit\_on}$\rightarrow$
 We evaluate \numactions{} actions from the AGD20K affordance vocabulary~\cite{agd20k}: \textbf{sit\_on}, \textbf{hold}, \textbf{carry}, \textbf{cut}, \textbf{throw}, \textbf{ride} --- which is a broader set than the three actions ADE annotates, applied to ADE20K scenes whose multi-object context the taxonomy's physical and social exceptions require.
 We query four standard frontier VLMs (\textbf{GPT-5.5}, \textbf{Claude Sonnet~5}, \textbf{Gemini~3.5~Flash}, \textbf{Llama~4~Maverick}) at temperature $0$ where supported, with reasoning disabled and up to $512$ response tokens.
 The chain-of-thought model \textbf{o4-mini} is evaluated on a held-out subset (up to $2{,}048$ tokens) to test whether explicit reasoning improves exception attribution.
-% D3 (when local results land): the Qwen3-VL-8B Instruct/Thinking pair is served locally with
-% vLLM from the official FP8 checkpoints — both variants FP8, so the same-weights ablation stays
-% internally consistent. State this here; bf16 does not fit the 16 GB GPU used.
+We additionally evaluate the open-weight pair \textbf{Qwen3-VL-8B-Instruct} and \textbf{Qwen3-VL-8B-Thinking}, served locally with vLLM from the official FP8 checkpoints on a single 16\,GB GPU.
+The two variants share a base model and differ only in whether inference emits a reasoning trace, which isolates chain-of-thought with weights held fixed (Sec.~\ref{sec:cot_ablation}).
+Both are served in FP8 so that the comparison is internally consistent, and the Thinking variant is given a $6{,}144$-token generation budget so that its trace and its answer both fit the context window.
 
 \paragraph{Segmentation and region budget.}
 SAM~2 generates up to 50 masks per image for the area-ranked baseline, and SAM~3 provides concept-targeted selection (Sec.~\ref{sec:pipeline}). 
@@ -483,6 +484,15 @@ Llama emits Dangerous and Socially Awkward almost never ($0.1\%$ each), and GPT-
 Gemini's outlier status in Table~\ref{tab:main} is therefore largely a clash of type priors rather than per-scene dissent, and each model brings its own systematic bias about \emph{which} exception type the world contains.
 A tie-free typicality score (mean agreement with the other three, no majority needed) reproduces the consensus ordering while using all $3{,}342$ pairs, so the $27.6\%$ of pairs the strict majority discards as 2--2 ties do not distort the ranking, they only hide how weak the majority is.
 
+\paragraph{More voters do not recover consensus.}
+A four-model panel is small enough that ties could plausibly be an artifact of the panel size, and all four models are closed APIs whose weights may change.
+We therefore replay the \emph{identical} committed regions to the two open-weight variants of Sec.~\ref{sec:cot_ablation} and rescore the six-model pool.
+Adding voters does what it should to the ties: the fraction of pairs with no strict majority falls from $27.6\%$ to $18.6\%$ under area-ranking and from $20.0\%$ to $16.8\%$ under concept-targeting.
+Chance-corrected agreement nonetheless falls rather than rises, from $\kappa_7=0.138$ to $0.126$ (area) and from $0.246$ to $0.178$ (concept).
+Breaking ties is not the same as finding consensus, and the additional independent voters expose more typed disagreement rather than less.
+The open models also reproduce the prior-driven mechanism in a sharper form: the Instruct variant never emits Socially Awkward at all, and the Thinking variant assigns Object Non-functional to $74.7\%$ of area-ranked pairs.
+Because these are open weights the replayed predictions are a frozen, reproducible snapshot, which the closed-API results of Table~\ref{tab:kappa} cannot offer.
+
 \subsection{Region Budget and Selection}
 \label{sec:ablations}
 
@@ -566,6 +576,71 @@ Explicit reasoning helps but does not dominate: o4-mini detects and types except
 Chain-of-thought reliably lifts the weaker models, but a sufficiently strong standard model rivals it.
 Explicit reasoning is sufficient but not necessary here.
 
+\subsection{Same-Weights Reasoning Ablation}
+\label{sec:cot_ablation}
+
+The comparison above confounds reasoning with model identity: o4-mini differs from the four standard models in training data and scale as well as in chain-of-thought.
+The open-weight pair removes that confound.
+Qwen3-VL-8B-Instruct and Qwen3-VL-8B-Thinking share a base model, so any difference between them is attributable to the reasoning trace alone.
+Both are run on the same 579 exception instances under identical serving conditions.
+The Thinking variant returns no parseable answer on one instance, and all numbers below are computed on the $578$ instances answered by both variants, with the difference between them bootstrapped over image clusters (Table~\ref{tab:cot}).
+
+\begin{table}[t]
+  \centering
+  \footnotesize
+  \caption{Same-weights chain-of-thought ablation on the $578$ exception instances answered by both variants. Detection and type as in Table~\ref{tab:reasoning}, with 95\% image-cluster bootstrap CIs. The $\Delta$ row is the paired difference with its own bootstrap CI. Reasoning improves detection but not typing.}
+  \label{tab:cot}
+  \begin{tabular}{lccc}
+    \toprule
+    Variant & Detect $\uparrow$ & Type $\uparrow$ & METEOR $\uparrow$ \\
+    \midrule
+    Qwen3-VL-8B-Instruct & 0.649\,{\scriptsize[.593,\,.701]} & 0.190\,{\scriptsize[.145,\,.231]} & 0.148 \\
+    Qwen3-VL-8B-Thinking & \textbf{0.709}\,{\scriptsize[.660,\,.755]} & \textbf{0.215}\,{\scriptsize[.163,\,.260]} & \textbf{0.162} \\
+    \midrule
+    $\Delta$ (Thinking $-$ Instruct) & $+0.061$\,{\scriptsize[+.016,\,+.111]} & $+0.025$\,{\scriptsize[$-$.043,\,+.094]} & $+0.014$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Chain-of-thought buys detection, not attribution.
+The reasoning trace raises exception detection by $+0.061$, a gain whose bootstrap CI excludes zero, while the typed judgment improves by only $+0.025$ with a CI spanning zero.
+With weights held fixed, reasoning therefore reproduces exactly the asymmetry this paper reports across models: it helps decide \emph{whether} an action is blocked and leaves \emph{why} unresolved.
+This also confirms that the asymmetry is not an artifact of comparing different model families.
+
+\begin{table}[t]
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}
+  \caption{Where the reasoning trace changes the typed judgment, on the same $578$ instances. Each row splits the ground-truth exceptions of one axis into exact type, right axis but wrong type, wrong axis, and missed. Reasoning redistributes typing across axes rather than uniformly improving it.}
+  \label{tab:cotaxis}
+  \begin{tabular}{llcccc}
+    \toprule
+    Axis & Variant & Exact $\uparrow$ & Right axis & Wrong axis & Missed $\downarrow$ \\
+    \midrule
+    Functional  & Instruct & \textbf{0.333} & 0.257 & 0.012 & 0.398 \\
+    ($n{=}171$) & Thinking & 0.158 & \textbf{0.409} & 0.158 & \textbf{0.275} \\
+    \midrule
+    Social      & Instruct & 0.003 & 0.003 & 0.636 & 0.358 \\
+    ($n{=}332$) & Thinking & \textbf{0.063} & \textbf{0.063} & \textbf{0.524} & \textbf{0.349} \\
+    \midrule
+    Danger      & Instruct & 0.093 & --- & 0.693 & 0.213 \\
+    ($n{=}75$)  & Thinking & \textbf{0.413} & --- & \textbf{0.520} & \textbf{0.067} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The aggregate null hides a systematic redistribution (Table~\ref{tab:cotaxis}).
+Without the reasoning trace the model has effectively abandoned two of the three constraint axes: it emits a social code on $2$ of $578$ instances and types only $9.3\%$ of dangerous instances correctly, funnelling almost every detected exception into the functional codes.
+The reasoning trace reverses this.
+Social codes rise from $2$ to $57$ emissions, exact social typing from $0.003$ to $0.063$, and exact danger typing from $0.093$ to $0.413$ with missed danger instances falling from $0.213$ to $0.067$.
+The gains are paid for on the functional axis, where exact typing falls from $0.333$ to $0.158$, although the predictions remain on the correct axis: right-axis attribution rises from $0.257$ to $0.409$, so the model still recognizes a functional constraint and merely picks the wrong functional code.
+Net typed accuracy barely moves because these movements cancel.
+
+What reasoning changes here is the label prior rather than the discrimination.
+The Instruct variant behaves as if most of the taxonomy did not exist, and the reasoning trace restores access to the neglected categories without making the model better at choosing among them.
+This is the same prior-driven mechanism identified in Sec.~\ref{sec:kappa} for the frontier models, observed within a single set of weights and switched on and off by inference mode alone.
+It also tempers a natural reading of Sec.~\ref{sec:reasoning}: chain-of-thought does not simply add typed competence, and a headline accuracy that hardly moves can conceal a wholesale reallocation of the model's typed predictions.
+
 \subsection{Semantic Explanation Quality}
 \label{sec:semantic}
 
@@ -577,7 +652,7 @@ Table~\ref{tab:semantic} separates the two with the semantic measures of Sec.~\r
   \centering
   \footnotesize
   \setlength{\tabcolsep}{4.5pt}
-  \caption{Semantic explanation quality on the 579 ground-truth exceptions. \emph{all} counts missed exceptions as zero (the convention behind Table~\ref{tab:expA}); \emph{det.} conditions on the model having written an explanation ($n$ rows). \emph{cos exact} / \emph{cos w-axis} split the detected rows by whether the predicted type was exactly right or on the wrong constraint axis. Best per column \textbf{bold}.}
+  \caption{Semantic explanation quality on the 579 ground-truth exceptions. \emph{all} counts missed exceptions as zero (the convention behind Table~\ref{tab:expA}); \emph{det.} conditions on the model having written an explanation ($n$ rows). \emph{cos exact} / \emph{cos w-axis} split the detected rows by whether the predicted type was exactly right or on the wrong constraint axis. Best of the four standard models per column \textbf{bold}. The open-weight pair is scored on the same references and, for Thinking, over its $578$ answered instances.}
   \label{tab:semantic}
   \begin{tabular}{lrccccccc}
     \toprule
@@ -591,6 +666,9 @@ Table~\ref{tab:semantic} separates the two with the semantic measures of Sec.~\r
     Llama 4 Maverick    & 215 & 0.158 & 0.425 & 0.064 & 0.172 & \textbf{0.880} & 0.410 & 0.421 \\
     \midrule
     o4-mini (reasoning) & 406 & 0.319 & 0.455 & 0.150 & 0.213 & 0.882 & 0.463 & 0.450 \\
+    \midrule
+    Qwen3-VL-8B-Instr.  & 376 & 0.313 & 0.482 & 0.127 & 0.195 & 0.882 & 0.500 & 0.483 \\
+    Qwen3-VL-8B-Think.  & 410 & 0.343 & 0.484 & 0.174 & 0.245 & 0.881 & 0.473 & 0.479 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -605,6 +683,16 @@ The right-axis-wrong-type rows carry the strongest entailment scores of all, alt
 Models thus often perceive the correct reason but file it under the wrong code, so part of the typed divergence of Sec.~\ref{sec:kappa} is a taxonomy-mapping failure rather than a perception failure.
 This substantiates the claim that near-zero $n$-gram scores reflect phrasing variety rather than wrong content, with one amendment: they also reflect missed detections, which no text metric should be asked to absorb.
 BERTScore~F1 is reported for completeness but compresses to $0.87$--$0.88$ for every model on detected rows, and discriminates little at this granularity.
+
+The open-weight pair extends both conclusions beyond the closed models and adds a third.
+Conditioned on detection they fall squarely inside the band the frontier models occupy ($0.482$ and $0.484$ cosine, against a $0.413$--$0.507$ span), which is further evidence that explanation quality converges once a model recognizes the exception at all.
+The label--text decoupling recurs in the Thinking variant in its strongest form: its wrong-axis explanations score marginally \emph{higher} than its exact-type ones ($0.479$ vs.\ $0.473$ cosine), and its right-axis rows lead on entailment by a wide margin ($0.322$ vs.\ $0.233$).
+Reasoning traces do not repair the mapping from a correctly perceived reason to the correct code, which is the same conclusion Sec.~\ref{sec:cot_ablation} reaches from the typed labels.
+
+The third point concerns where the remaining headroom lies.
+Qwen3-VL-8B-Thinking ranks second of all seven models on explanation semantics under the all-rows convention ($0.343$ cosine and $0.174$ entailment, behind only Claude) and second on METEOR ($0.162$ vs.\ Claude's $0.168$), while ranking third on typed accuracy and using $8$B open weights on a single consumer GPU.
+Its free text is therefore a better guide to what it understood than its typed label is.
+Read together with Sec.~\ref{sec:remap}, where a text-only mapper recovers accuracy from Claude's explanations, this locates the bottleneck in the mapping from reason to code rather than in the perception or the language, and it suggests that the mapping is what a purpose-built model should learn.
 
 The consequence field repeats both patterns and adds one.
 Conditioned on detection, consequence cosine similarity spans $0.452$--$0.560$ (all-rows: $0.130$--$0.405$), slightly \emph{higher} than for explanations, so models converge more on what would happen than on why it is blocked.
@@ -692,12 +780,14 @@ First, chance correction shows the consensus is thinner than raw rates suggest (
 Second, much of the typed disagreement is systematic rather than scene-specific: each model carries its own prior over exception types, from Gemini's aversion to Object Non-functional to Llama's near-total refusal of Dangerous.
 Third, the agreement signal must not be read as correctness: models agree with each other $2.8\times$ more than with the labels (chance-corrected), the majority vote loses to the best single model on every metric, and the most typical model in the exception consensus is the least accurate exception detector against ground truth (Sec.~\ref{sec:consensus}).
 Fourth, the typed disagreement overstates the semantic disagreement: explanations attached to the wrong type are nearly as aligned with the human references as those attached to the right one, so models often perceive the correct reason and file it under the wrong code (Sec.~\ref{sec:semantic}), a reading an independent LLM judge corroborates while its own perturbation audit warns against over-trusting it (Sec.~\ref{sec:judge}).
+Fifth, the asymmetry is not an artifact of comparing model families: holding weights fixed and switching only the reasoning trace on and off improves detection significantly while leaving typed accuracy unchanged (Sec.~\ref{sec:cot_ablation}).
+That ablation also shows the label-prior mechanism operating within a single model, where reasoning restores access to constraint axes the base variant had all but abandoned without improving the choice among them.
 Typed attribution is where frontier VLMs diverge, and where their consensus is least trustworthy.
 
 \paragraph{Limitations.}
 ADE ground truth covers only three of our six actions, so \texttt{cut}, \texttt{throw}, and \texttt{ride} are evaluated ground-truth-free.
 Furthermore, inter-model agreement is a reliability signal, not a measure of correctness, and Sec.~\ref{sec:consensus} shows the gap is material rather than hypothetical in this setting.
-The social and safety codes encode a particular normative frame --- the Awkward-vs-Forbidden boundary is culturally contestable --- and we query closed, drifting API endpoints. 
+The social and safety codes encode a particular normative frame --- the Awkward-vs-Forbidden boundary is culturally contestable --- and four of our models are closed, drifting API endpoints, a limitation the open-weight replays of Sec.~\ref{sec:kappa} answer only in part.
 Applying the AGD20K vocabulary to ADE20K scenes also leaves some actions sparse or ill-posed: concept targeting with SAM 3 finds rideable objects in only $5$ of $200$ scenes, and \texttt{throw} yields just $1$--$2\%$ four-way agreement. 
 So the weakest scores partly reflect this domain mismatch rather than model divergence alone. 
 Better-matched scenes, spatial grounding, and a larger action set would strengthen generality.
