@@ -16,7 +16,25 @@ git clone https://github.com/Reagan1311/OOAL ooal_upstream   # checkout the rele
 
 `ooal_infer.py` isolates every upstream-version-sensitive assumption in `build_model()` and
 `saliency()`; if the cloned revision's constructor or forward signature differs, those two
-functions (and nothing else) need a small adaptation — compare with the repo's own `test.py`.
+functions (and nothing else) need a small adaptation — compare with the repo's own `test.py`,
+and run `probe_ooal.py` to print the signature, the checkpoint shapes and how upstream builds
+the model. The current adapter matches the revision whose `Net.__init__(args, input_dim,
+out_dim)` reads `args.class_names`, and calls it as their `test.py` does: `Net(args, 768, 512)`.
+
+Three things follow from that revision and are wired in already:
+
+- **The affordance vocabulary is closed.** The prompt learner is trained per class, so
+  `seen_best` only knows the 36 `SEEN_AFF` names and `unseen_best` only the 25 `UNSEEN_AFF`
+  names (read from the clone's `data/agd20k_ego.py`). The adapter picks the list by the
+  checkpoint's class dimension and skips any requested affordance outside it, loudly. Running
+  `unseen_best` over the *Seen* tree therefore drops 11 affordances (`beat`, `boxing`,
+  `brush_with`, `drag`, `lift`, `look_out`, `pack`, `stir`, `talk_on`, `text_on`, `write`) —
+  pair each checkpoint with its own split.
+- **Inference runs at 224 px** with a plain resize and ImageNet stats, matching their
+  `TestData` transform (`--input_px` overrides).
+- **CUDA is required**: the upstream constructor and forward hardcode `.cuda()`. The first run
+  also downloads DINOv2 via `torch.hub` and CLIP ViT-B/16, so the lab PC needs network access
+  once.
 
 ## Step 1 — checkpoint sanity (do this first)
 
@@ -33,8 +51,16 @@ a single model load, so it needs no `--affordances` list. Use `--images <flat di
 explicit `--affordances` only when every image should be scored for every affordance.
 
 Expected: KLD/SIM/NSS in the ballpark of the OOAL paper (printed by the script). If they are
-far off, stop and fix the adapter before anything downstream. Repeat with `--split Unseen`
-and `unseen_best`.
+far off, stop and fix the adapter before anything downstream. Then repeat for the other split:
+
+```bash
+python3 ooal_infer.py --ckpt ../../ooal_models_amar/unseen_best --ooal_repo ooal_upstream \
+    --tree ../../datasets/AGD20K/Unseen/testset/egocentric --outdir heatmaps_agd_unseen
+python3 eval_selection.py --split Unseen --metrics --heatmaps heatmaps_agd_unseen
+```
+
+(1710 Seen and 540 Unseen test images; metrics here are computed at the GT's native size,
+whereas upstream scores at 224 px, so small offsets from the published numbers are expected.)
 
 ## Step 2 — GT selection benchmark (AGD20K, no VLMs)
 
