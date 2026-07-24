@@ -70,3 +70,8 @@ overleaf/*.blg
 overleaf/*.synctex.gz
 overleaf/*.fdb_latexmk
 overleaf/*.fls
+
+# ---- D5 Stage 1 (regenerable: fetched pixels, datasets, checkpoints) -------
+experiments/d5_reason_first/data/
+experiments/d5_reason_first/runs/
+experiments/d5_reason_first/merged/

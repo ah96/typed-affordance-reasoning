@@ -44,7 +44,11 @@ case "${1:-}" in
     ;;
   internvl3)
     # No official FP8 release — quantize the bf16 weights to fp8 at load time.
-    vllm serve OpenGVLab/InternVL3-8B "${COMMON[@]}" --trust-remote-code --quantization fp8
+    # InternVL's chat template concatenates `content` as a string, so vLLM must flatten the
+    # OpenAI-style content list before applying it. Without this every request 400s with
+    # "can only concatenate str (not list) to str" (the Qwen models auto-detect fine).
+    vllm serve OpenGVLab/InternVL3-8B "${COMMON[@]}" --trust-remote-code --quantization fp8 \
+      --chat-template-content-format string
     ;;
   qwen25)
     vllm serve Qwen/Qwen2.5-VL-7B-Instruct "${COMMON[@]}" --quantization fp8
