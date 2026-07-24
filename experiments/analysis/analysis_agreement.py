@@ -17,6 +17,7 @@ import argparse
 from collections import Counter
 from itertools import combinations
 
+# The four paper models; --models overrides it (e.g. to add the D3 open-weight voters).
 MODELS = ["gpt_5_5", "claude_sonnet_5", "gemini_3_5_flash", "llama_4_maverick"]
 REL7 = ["Positive", "FirmlyNegative", "ObjectNonFunctional", "PhysicalObstacle",
         "SociallyAwkward", "SociallyForbidden", "Dangerous"]
@@ -100,13 +101,15 @@ def analyze(indir, mode, K):
         key = f"{MODELS[i]}|{MODELS[j]}"
         out["pairwise_cohen_kappa_7"][key] = cohen_kappa(cols7[i], cols7[j], 7)
         out["pairwise_cohen_kappa_3"][key] = cohen_kappa(cols3[i], cols3[j], 3)
-    out["mean_pairwise_cohen_kappa_7"] = sum(out["pairwise_cohen_kappa_7"].values()) / 6
-    out["mean_pairwise_cohen_kappa_3"] = sum(out["pairwise_cohen_kappa_3"].values()) / 6
+    npairs = len(MODELS) * (len(MODELS) - 1) // 2
+    out["mean_pairwise_cohen_kappa_7"] = sum(out["pairwise_cohen_kappa_7"].values()) / npairs
+    out["mean_pairwise_cohen_kappa_3"] = sum(out["pairwise_cohen_kappa_3"].values()) / npairs
 
-    # tie-free typicality: mean agreement of each model with the other three, all items kept
+    # tie-free typicality: mean agreement of each model with all the others, all items kept
     out["typicality"] = {}
     for i, m in enumerate(MODELS):
-        s = sum(sum(row[i] == row[j] for j in range(len(MODELS)) if j != i) / 3 for row in labs7)
+        s = sum(sum(row[i] == row[j] for j in range(len(MODELS)) if j != i) / (len(MODELS) - 1)
+                for row in labs7)
         out["typicality"][m] = s / N
 
     # conditional type agreement: both models say exception (2-6) -> same type?
@@ -126,10 +129,10 @@ def analyze(indir, mode, K):
     # the analogous conditional agreement on the 3-way verdict, for contrast
     agree3 = sum(sum(r3[i] == r3[j] for i, j in combinations(range(len(MODELS)), 2))
                  for r3 in labs3)
-    out["pairwise_agreement_3way"] = agree3 / (6 * N)
+    out["pairwise_agreement_3way"] = agree3 / (npairs * N)
     agree7 = sum(sum(r7[i] == r7[j] for i, j in combinations(range(len(MODELS)), 2))
                  for r7 in labs7)
-    out["pairwise_agreement_7way"] = agree7 / (6 * N)
+    out["pairwise_agreement_7way"] = agree7 / (npairs * N)
 
     out["label_distribution"] = {
         m: {REL7[c]: cnt / N for c, cnt in sorted(Counter(cols7[i]).items())}
@@ -145,7 +148,7 @@ def report(r):
     print(f"mean pairwise Cohen kappa 7-way {r['mean_pairwise_cohen_kappa_7']:.3f}   3-way {r['mean_pairwise_cohen_kappa_3']:.3f}")
     cta = r["conditional_type_agreement_overall"]
     print(f"both-exception type agreement: {cta['rate']:.3f}  (n={cta['n']} model-pair events)")
-    print("typicality (tie-free, vs other 3):",
+    print(f"typicality (tie-free, vs other {len(MODELS) - 1}):",
           "  ".join(f"{m} {v:.3f}" for m, v in r["typicality"].items()))
     print("label distribution (per model):")
     for m, d in r["label_distribution"].items():
@@ -159,7 +162,12 @@ def main():
     ap.add_argument("--mode", choices=["sam2_area", "sam3_concept"], default=None)
     ap.add_argument("--K", type=int, default=3)
     ap.add_argument("--out", default=os.path.join(HERE, "out", "agreement.json"))
+    ap.add_argument("--models", default=None,
+                    help="Comma list overriding the default 4-model pool (D3b widens it).")
     args = ap.parse_args()
+    if args.models:
+        global MODELS
+        MODELS = args.models.split(",")
     modes = [args.mode] if args.mode else ["sam2_area", "sam3_concept"]
     results = []
     for mode in modes:
