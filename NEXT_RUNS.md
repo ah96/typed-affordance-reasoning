@@ -62,10 +62,8 @@ Full detail in `experiments/ooal_grounding/HOW_TO_RUN_D4.md`; this is the short 
 ```bash
 cd ~/amar/git/typed-affordance-reasoning/experiments/ooal_grounding
 git clone https://github.com/Reagan1311/OOAL ooal_upstream
-AFFS=$(ls ../../datasets/AGD20K/Seen/testset/egocentric | paste -sd,)
 python3 ooal_infer.py --ckpt ../../ooal_models_amar/seen_best --ooal_repo ooal_upstream \
-    --images-from-tree ../../datasets/AGD20K/Seen/testset/egocentric \
-    --affordances "$AFFS" --outdir heatmaps_agd
+    --tree ../../datasets/AGD20K/Seen/testset/egocentric --outdir heatmaps_agd
 python3 eval_selection.py --split Seen --metrics --heatmaps heatmaps_agd
 ```
 

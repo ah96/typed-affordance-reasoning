@@ -23,16 +23,14 @@ functions (and nothing else) need a small adaptation — compare with the repo's
 Dump saliency maps for the Seen egocentric test images and score against GT:
 
 ```bash
-AFFS=$(ls ../../datasets/AGD20K/Seen/testset/egocentric | paste -sd,)
 python3 ooal_infer.py --ckpt ../../ooal_models_amar/seen_best --ooal_repo ooal_upstream \
-    --images-from-tree ../../datasets/AGD20K/Seen/testset/egocentric \
-    --affordances "$AFFS" --outdir heatmaps_agd     # see note below
+    --tree ../../datasets/AGD20K/Seen/testset/egocentric --outdir heatmaps_agd
 python3 eval_selection.py --split Seen --metrics --heatmaps heatmaps_agd
 ```
 
-Note: `ooal_infer.py --images` takes a flat directory; for the nested AGD20K tree either
-symlink the test images into one folder (stems are unique) or loop over
-`egocentric/<affordance>/<object>/` passing `--affordances <that affordance>`.
+`--tree` walks `<affordance>/<object>/*.jpg` and scores each image for its own affordance on
+a single model load, so it needs no `--affordances` list. Use `--images <flat dir>` with an
+explicit `--affordances` only when every image should be scored for every affordance.
 
 Expected: KLD/SIM/NSS in the ballpark of the OOAL paper (printed by the script). If they are
 far off, stop and fix the adapter before anything downstream. Repeat with `--split Unseen`
